@@ -35,12 +35,16 @@ public class Deck {
         while (true) {
             Scanner scanner = new Scanner(System.in);
             String input = scanner.nextLine();
-            //int moveParams = scanner.nextInt();
 
             switch (input) {
-                case "move":
-                    moveCards(4, 1, 6);
+                case "move": {
+                    int inputSourceRow = scanner.nextInt();
+                    int inputSourceRowIndex = scanner.nextInt();
+                    int inputDestinationRow = scanner.nextInt();
+
+                    moveCards(inputSourceRow, inputSourceRowIndex, inputDestinationRow);
                     break;
+                }
                 case "hint":
                     hint();
                     break;
@@ -62,15 +66,23 @@ public class Deck {
 
     private void moveCards(int sourceRow, int sourceRowIndex, int destinationRow) {
 
-        List<Card> sourceList = tableau.getColumns()[sourceRow];
-        List<Card> destinationList = tableau.getColumns()[destinationRow];
+        if (sourceRow < tableau.getColumns().length && destinationRow < tableau.getColumns().length) {
 
-        if (!sourceList.isEmpty()) {
-            destinationList.add(sourceList.get(sourceRowIndex));
-            sourceList.get(sourceRowIndex).setFlipped(true);
+            List<Card> sourceList = tableau.getColumns()[sourceRow];
+            List<Card> destinationList = tableau.getColumns()[destinationRow];
+
+            if (!sourceList.isEmpty() && sourceRowIndex < sourceList.size()) {
+                destinationList.add(sourceList.get(sourceRowIndex));
+                sourceList.get(sourceRowIndex).setFlipped(true);
+                sourceList.remove(sourceRowIndex);
+            } else {
+                System.out.println("WRONG INDEX OF SOURCE LIST OR LIST IS EMPTY !!!");
+            }
+        } else {
+            System.out.println("SOURE ROW OR DESTINATION ROW OUT OF INDEX !!!");
         }
-
     }
+
 
     private void hint() {
         List<Card> cards = new ArrayList<>();

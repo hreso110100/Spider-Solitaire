@@ -43,80 +43,40 @@ public class Tableau {
         return tableau1;
     }
 
-    public void setTableau1(List<Card> tableau1) {
-        this.tableau1 = tableau1;
-    }
-
     public List<Card> getTableau2() {
         return tableau2;
-    }
-
-    public void setTableau2(List<Card> tableau2) {
-        this.tableau2 = tableau2;
     }
 
     public List<Card> getTableau3() {
         return tableau3;
     }
 
-    public void setTableau3(List<Card> tableau3) {
-        this.tableau3 = tableau3;
-    }
-
     public List<Card> getTableau4() {
         return tableau4;
-    }
-
-    public void setTableau4(List<Card> tableau4) {
-        this.tableau4 = tableau4;
     }
 
     public List<Card> getTableau5() {
         return tableau5;
     }
 
-    public void setTableau5(List<Card> tableau5) {
-        this.tableau5 = tableau5;
-    }
-
     public List<Card> getTableau6() {
         return tableau6;
-    }
-
-    public void setTableau6(List<Card> tableau6) {
-        this.tableau6 = tableau6;
     }
 
     public List<Card> getTableau7() {
         return tableau7;
     }
 
-    public void setTableau7(List<Card> tableau7) {
-        this.tableau7 = tableau7;
-    }
-
     public List<Card> getTableau8() {
         return tableau8;
-    }
-
-    public void setTableau8(List<Card> tableau8) {
-        this.tableau8 = tableau8;
     }
 
     public List<Card> getTableau9() {
         return tableau9;
     }
 
-    public void setTableau9(List<Card> tableau9) {
-        this.tableau9 = tableau9;
-    }
-
     public List<Card> getTableau10() {
         return tableau10;
-    }
-
-    public void setTableau10(List<Card> tableau10) {
-        this.tableau10 = tableau10;
     }
 
     public void fillTableau(Card[] cards) {

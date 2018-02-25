@@ -14,13 +14,4 @@ public class Foundations {
         return cards;
     }
 
-    public void setCards(Card[][] cards) {
-        this.cards = cards;
-    }
-
-    public void addToFoundation() {
-
-    }
-
-
 }
