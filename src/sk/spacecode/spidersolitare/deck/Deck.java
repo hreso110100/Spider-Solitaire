@@ -1,6 +1,5 @@
 package sk.spacecode.spidersolitare.deck;
 
-import com.sun.deploy.util.ArrayUtil;
 import sk.spacecode.spidersolitare.card.Card;
 import sk.spacecode.spidersolitare.card.Pack;
 
@@ -12,6 +11,7 @@ public class Deck {
     private Tableau tableau;
     private Card card;
     private Pack pack;
+    private static int removeItemFromArrayIndex = 0;
 
     public Deck() {
         foundations = new Foundations();
@@ -31,16 +31,19 @@ public class Deck {
         drawDeck();
     }
 
-    public void game() {
+    private void game() {
         while (true) {
-            Scanner sc = new Scanner(System.in);
-            String input = sc.nextLine();
+            Scanner scanner = new Scanner(System.in);
+            String input = scanner.nextLine();
+            //int moveParams = scanner.nextInt();
 
             switch (input) {
+                case "move":
+                    moveCards(4, 1, 6);
+                    break;
                 case "hint":
                     hint();
                     break;
-
                 case "restart":
                     Deck deck = new Deck();
                     break;
@@ -50,12 +53,26 @@ public class Deck {
                 case "display":
                     drawDeck();
                     break;
+                case "exit":
+                    System.exit(0);
+                    break;
             }
+        }
+    }
+
+    private void moveCards(int sourceRow, int sourceRowIndex, int destinationRow) {
+
+        List<Card> sourceList = tableau.getColumns()[sourceRow];
+        List<Card> destinationList = tableau.getColumns()[destinationRow];
+
+        if (!sourceList.isEmpty()) {
+            destinationList.add(sourceList.get(sourceRowIndex));
+            sourceList.get(sourceRowIndex).setFlipped(true);
         }
 
     }
 
-    public void hint() {
+    private void hint() {
         List<Card> cards = new ArrayList<>();
 
         cards.add(tableau.getTableau1().get(tableau.getTableau1().size() - 1));
@@ -83,7 +100,7 @@ public class Deck {
     private void drawDeck() {
         for (int i = 0; i < tableau.getColumns().length; i++) {
             for (int j = 0; j < tableau.getColumns()[i].size(); j++) {
-                if (j == tableau.getColumns()[i].size() - 1) {
+                if (tableau.getColumns()[i].get(j).isFlipped()) {
                     System.out.print(tableau.getColumns()[i].get(j).getRank() + " ");
                 } else {
                     System.out.print(" - ");
@@ -95,13 +112,13 @@ public class Deck {
 
     private void takeCardsFromStock(List[] columns) {
 
-        int removeIndex = 0;
-
         for (int i = 0; i < columns.length; i++) {
-            if (columns.length == 10 && stock.getStock().length > 0) {
-                tableau.getColumns()[i].add(stock.getStock()
+            if (columns.length == 10 && removeItemFromArrayIndex <= 49) {
+                stock.getStock()[removeItemFromArrayIndex].setFlipped(true);
+                tableau.getColumns()[i].add(stock.getStock()[removeItemFromArrayIndex++]);
             } else {
                 System.out.println("CANNOT SERVE CARDS FROM STOCK !!!");
+                break;
             }
         }
     }
