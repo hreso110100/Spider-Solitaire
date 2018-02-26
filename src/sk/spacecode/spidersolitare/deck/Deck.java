@@ -67,15 +67,28 @@ public class Deck {
     private void moveCards(int sourceRow, int sourceRowIndex, int destinationRow) {
 
         if (sourceRow < tableau.getColumns().length && destinationRow < tableau.getColumns().length) {
-
             List<Card> sourceList = tableau.getColumns()[sourceRow];
             List<Card> destinationList = tableau.getColumns()[destinationRow];
+            List<Card> sourceMovedList = new ArrayList<>();
 
             if (!sourceList.isEmpty() && sourceRowIndex < sourceList.size()
                     && (sourceList.get(sourceRowIndex).getRank() - destinationList.get(destinationList.size() - 1).getRank() == -1)) {
-                destinationList.add(sourceList.get(sourceRowIndex));
-                sourceList.get(sourceRowIndex).setFlipped(true);
-                sourceList.remove(sourceRowIndex);
+
+                int firstItemAtColumn = sourceList.get(sourceRowIndex).getRank();
+                sourceMovedList.add(sourceList.get(sourceRowIndex));
+
+                for (int i = sourceRowIndex + 1; i < sourceList.size(); i++) {
+                    if (firstItemAtColumn - sourceList.get(i).getRank() == 1) {
+                        firstItemAtColumn = sourceList.get(i).getRank();
+                        sourceMovedList.add(sourceList.get(i));
+                    } else {
+                        sourceMovedList.clear();
+                        System.out.println("CANNOT MOVE CARDS !!!");
+                    }
+                }
+                destinationList.addAll(sourceMovedList);
+                sourceList.removeAll(sourceMovedList);
+                sourceMovedList.clear();
             } else {
                 System.out.println("WRONG INDEX OF SOURCE LIST OR LIST IS EMPTY !!!");
             }
@@ -94,12 +107,16 @@ public class Deck {
         }
 
         for (int j = 0; j < cards.size(); j++) {
-            for (Card card1 : cards) {
-                if (cards.get(j).getRank() - card1.getRank() == -1) {
-                    System.out.println(" HINT " + cards.get(j).getRank() + " " + card1.getRank());
+            for (Card card : cards) {
+                if (cards.get(j).getRank() - card.getRank() == -1) {
+                    System.out.println(" HINT " + cards.get(j).getRank() + " " + card.getRank());
                 }
             }
         }
+    }
+
+    private void addToFoundations() {
+
     }
 
     private void drawDeck() {
