@@ -38,8 +38,11 @@ public class Deck {
 
             switch (input) {
                 case "move": {
+                    System.out.println("ENTER SOURCER ROW");
                     int inputSourceRow = scanner.nextInt();
+                    System.out.println("ENTER SOURCE ROW INDEX");
                     int inputSourceRowIndex = scanner.nextInt();
+                    System.out.println("ENTER DESTINATION ROW");
                     int inputDestinationRow = scanner.nextInt();
 
                     moveCards(inputSourceRow, inputSourceRowIndex, inputDestinationRow);
@@ -53,9 +56,6 @@ public class Deck {
                     break;
                 case "take":
                     takeCardsFromStock(tableau.getColumns());
-                    break;
-                case "display":
-                    drawDeck();
                     break;
                 case "exit":
                     System.exit(0);
@@ -71,7 +71,8 @@ public class Deck {
             List<Card> sourceList = tableau.getColumns()[sourceRow];
             List<Card> destinationList = tableau.getColumns()[destinationRow];
 
-            if (!sourceList.isEmpty() && sourceRowIndex < sourceList.size()) {
+            if (!sourceList.isEmpty() && sourceRowIndex < sourceList.size()
+                    && (sourceList.get(sourceRowIndex).getRank() - destinationList.get(destinationList.size() - 1).getRank() == -1)) {
                 destinationList.add(sourceList.get(sourceRowIndex));
                 sourceList.get(sourceRowIndex).setFlipped(true);
                 sourceList.remove(sourceRowIndex);
@@ -81,24 +82,16 @@ public class Deck {
         } else {
             System.out.println("SOURE ROW OR DESTINATION ROW OUT OF INDEX !!!");
         }
+        drawDeck();
     }
 
 
     private void hint() {
         List<Card> cards = new ArrayList<>();
 
-        cards.add(tableau.getTableau1().get(tableau.getTableau1().size() - 1));
-        cards.add(tableau.getTableau2().get(tableau.getTableau2().size() - 1));
-        cards.add(tableau.getTableau3().get(tableau.getTableau3().size() - 1));
-        cards.add(tableau.getTableau4().get(tableau.getTableau4().size() - 1));
-        cards.add(tableau.getTableau5().get(tableau.getTableau5().size() - 1));
-        cards.add(tableau.getTableau6().get(tableau.getTableau6().size() - 1));
-        cards.add(tableau.getTableau7().get(tableau.getTableau7().size() - 1));
-        cards.add(tableau.getTableau8().get(tableau.getTableau8().size() - 1));
-        cards.add(tableau.getTableau9().get(tableau.getTableau9().size() - 1));
-        cards.add(tableau.getTableau10().get(tableau.getTableau10().size() - 1));
-
-        System.out.println();
+        for (int i = 0; i < tableau.getColumns().length; i++) {
+            cards.add(tableau.getColumns()[i].get(tableau.getColumns()[i].size() - 1));
+        }
 
         for (int j = 0; j < cards.size(); j++) {
             for (Card card1 : cards) {
@@ -111,9 +104,29 @@ public class Deck {
 
     private void drawDeck() {
         for (int i = 0; i < tableau.getColumns().length; i++) {
+            System.out.print("ROW " + i + "   ");
             for (int j = 0; j < tableau.getColumns()[i].size(); j++) {
+                if (j == tableau.getColumns()[i].size() - 1) {
+                    tableau.getColumns()[i].get(j).setFlipped(true);
+                }
                 if (tableau.getColumns()[i].get(j).isFlipped()) {
-                    System.out.print(tableau.getColumns()[i].get(j).getRank() + " ");
+                    switch (tableau.getColumns()[i].get(j).getRank()) {
+                        case 1:
+                            System.out.print("A ");
+                            break;
+                        case 11:
+                            System.out.print("J ");
+                            break;
+                        case 12:
+                            System.out.print("Q ");
+                            break;
+                        case 13:
+                            System.out.print("K ");
+                            break;
+                        default:
+                            System.out.print(tableau.getColumns()[i].get(j).getRank() + " ");
+                            break;
+                    }
                 } else {
                     System.out.print(" - ");
                 }
@@ -126,12 +139,12 @@ public class Deck {
 
         for (int i = 0; i < columns.length; i++) {
             if (columns.length == 10 && removeItemFromArrayIndex <= 49) {
-                stock.getStock()[removeItemFromArrayIndex].setFlipped(true);
                 tableau.getColumns()[i].add(stock.getStock()[removeItemFromArrayIndex++]);
             } else {
-                System.out.println("CANNOT SERVE CARDS FROM STOCK !!!");
+                System.out.println("STOCK IS EMPTY.");
                 break;
             }
         }
+        drawDeck();
     }
 }

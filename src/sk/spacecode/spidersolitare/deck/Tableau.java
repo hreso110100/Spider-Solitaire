@@ -39,46 +39,6 @@ public class Tableau {
         return columns;
     }
 
-    public List<Card> getTableau1() {
-        return tableau1;
-    }
-
-    public List<Card> getTableau2() {
-        return tableau2;
-    }
-
-    public List<Card> getTableau3() {
-        return tableau3;
-    }
-
-    public List<Card> getTableau4() {
-        return tableau4;
-    }
-
-    public List<Card> getTableau5() {
-        return tableau5;
-    }
-
-    public List<Card> getTableau6() {
-        return tableau6;
-    }
-
-    public List<Card> getTableau7() {
-        return tableau7;
-    }
-
-    public List<Card> getTableau8() {
-        return tableau8;
-    }
-
-    public List<Card> getTableau9() {
-        return tableau9;
-    }
-
-    public List<Card> getTableau10() {
-        return tableau10;
-    }
-
     public void fillTableau(Card[] cards) {
         int index = 0;
 
@@ -87,13 +47,9 @@ public class Tableau {
 
                 if (i == 5) {
                     tableau1.add(cards[index++]);
-                    tableau1.get(tableau1.size() - 1).setFlipped(true);
                     tableau2.add(cards[index++]);
-                    tableau2.get(tableau2.size() - 1).setFlipped(true);
                     tableau3.add(cards[index++]);
-                    tableau3.get(tableau3.size() - 1).setFlipped(true);
                     tableau4.add(cards[index]);
-                    tableau4.get(tableau4.size() - 1).setFlipped(true);
                 } else {
                     tableau1.add(cards[index++]);
                     tableau2.add(cards[index++]);
@@ -105,15 +61,6 @@ public class Tableau {
                     tableau8.add(cards[index++]);
                     tableau9.add(cards[index++]);
                     tableau10.add(cards[index++]);
-                }
-
-                if (i == 4) {
-                    tableau5.get(tableau5.size() - 1).setFlipped(true);
-                    tableau6.get(tableau6.size() - 1).setFlipped(true);
-                    tableau7.get(tableau7.size() - 1).setFlipped(true);
-                    tableau8.get(tableau8.size() - 1).setFlipped(true);
-                    tableau9.get(tableau9.size() - 1).setFlipped(true);
-                    tableau10.get(tableau10.size() - 1).setFlipped(true);
                 }
             }
         }
