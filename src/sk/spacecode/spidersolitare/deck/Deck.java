@@ -95,6 +95,7 @@ public class Deck {
         } else {
             System.out.println("SOURE ROW OR DESTINATION ROW OUT OF INDEX !!!");
         }
+        addToFoundations();
         drawDeck();
     }
 
@@ -117,6 +118,13 @@ public class Deck {
 
     private void addToFoundations() {
 
+        for (int i = 0; i < tableau.getColumns().length; i++) {
+            for (int j = 0; j < tableau.getColumns()[i].size(); j++) {
+                if (tableau.getColumns()[i].get(j).getRank() == 13) {
+                   
+                }
+            }
+        }
     }
 
     private void drawDeck() {
