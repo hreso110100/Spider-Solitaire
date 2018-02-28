@@ -19,7 +19,7 @@ public class Tableau {
     private List<Card> tableau9;
     private List<Card> tableau10;
 
-    public Tableau() {
+    Tableau() {
         tableau1 = new ArrayList<>();
         tableau2 = new ArrayList<>();
         tableau3 = new ArrayList<>();
@@ -35,6 +35,7 @@ public class Tableau {
         };
     }
 
+    @SuppressWarnings("unchecked")
     public List<Card>[] getColumns() {
         return columns;
     }

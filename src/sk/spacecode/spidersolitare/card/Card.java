@@ -7,7 +7,7 @@ public class Card {
     private String suit;
     private boolean flipped;
 
-    public Card(int rank, String color, String suit, boolean flipped) {
+    Card(int rank, String color, String suit, boolean flipped) {
         this.rank = rank;
         this.color = color;
         this.suit = suit;

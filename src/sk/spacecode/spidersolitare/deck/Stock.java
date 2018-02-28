@@ -6,7 +6,7 @@ public class Stock {
     private Card[] stock;
     private static final int STARTING_INDEX = 54;
 
-    public Stock() {
+    Stock() {
         stock = new Card[50];
     }
 

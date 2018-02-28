@@ -2,16 +2,35 @@ package sk.spacecode.spidersolitare.deck;
 
 import sk.spacecode.spidersolitare.card.Card;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Foundations {
 
-    private Card[][] cards;
+    private List<Card>[] cards;
+    private int foundationFilled;
+    private int foundationIndex;
 
-    public Foundations() {
-        cards = new Card[8][13];
+    @SuppressWarnings("unchecked")
+    Foundations() {
+        List<Card> foundation1 = new ArrayList<>();
+        List<Card> foundation2 = new ArrayList<>();
+        List<Card> foundation3 = new ArrayList<>();
+        List<Card> foundation4 = new ArrayList<>();
+        List<Card> foundation5 = new ArrayList<>();
+        List<Card> foundation6 = new ArrayList<>();
+        List<Card> foundation7 = new ArrayList<>();
+        List<Card> foundation8 = new ArrayList<>();
+        cards = new List[]{
+                foundation1, foundation2, foundation3, foundation4, foundation5, foundation6, foundation7, foundation8
+        };
     }
 
-    public Card[][] getCards() {
-        return cards;
+    public void addRunAndCheckWin(List<Card> run) {
+        cards[foundationIndex++].addAll(run);
+        foundationFilled++;
+        if (foundationFilled == 8) {
+            System.out.println("CONGRATULATIONS, YOU ARE WINNER !!!");
+        }
     }
-
 }
