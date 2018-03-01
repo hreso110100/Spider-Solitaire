@@ -32,7 +32,7 @@ public class History {
                     for (int i = sourceIndex; i < tableau.getColumns()[source].size(); i++) {
                         cardToRevert.add(tableau.getColumns()[source].get(sourceIndex));
                     }
-
+                    tableau.getColumns()[destination].get(tableau.getColumns()[destination].size() - 1).setFlipped(false);
                     tableau.getColumns()[destination].addAll(cardToRevert);
                     tableau.getColumns()[source].removeAll(cardToRevert);
                     deck.setStepCounter(deck.getStepCounter() - 1);
@@ -43,8 +43,8 @@ public class History {
                 case 2: {
                     for (int i = 0; i < tableau.getColumns().length; i++) {
                         tableau.getColumns()[i].remove(tableau.getColumns()[i].size() - 1);
-                        Deck.removeItemFromArrayIndex -= 10;
                     }
+                    Deck.removeItemFromArrayIndex -= 10;
                     deck.setStepCounter(deck.getStepCounter() - 1);
                     revertList.remove(revertList.size() - 1);
                     break;
