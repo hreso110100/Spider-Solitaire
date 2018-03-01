@@ -12,7 +12,7 @@ public class Deck {
     private Tableau tableau;
     private Pack pack;
     private History history;
-    private static int removeItemFromArrayIndex = 0;
+    public static int removeItemFromArrayIndex = 0;
     private int score;
     private int stepCounter;
 
@@ -35,6 +35,14 @@ public class Deck {
         drawDeck();
     }
 
+    public int getStepCounter() {
+        return stepCounter;
+    }
+
+    public void setStepCounter(int stepCounter) {
+        this.stepCounter = stepCounter;
+    }
+
     private void game() {
         while (true) {
             Scanner scanner = new Scanner(System.in);
@@ -52,6 +60,11 @@ public class Deck {
                     moveCards(inputSourceRow, inputSourceRowIndex, inputDestinationRow);
                     break;
                 }
+                case "revert": {
+                    history.removeFromHistory(tableau, this);
+                    drawDeck();
+                    break;
+                }
                 case "hint":
                     break;
                 case "restart":
@@ -67,7 +80,7 @@ public class Deck {
         }
     }
 
-    private void moveCardsCore(List<Card> sourceMovedList, List<Card> sourceList, List<Card> destinationList, int sourceRowIndex) {
+    private void moveCardsCore(List<Card> sourceMovedList, List<Card> sourceList, List<Card> destinationList, int source, int sourceRowIndex, int destination) {
 
         int firstItemAtColumn = sourceList.get(sourceRowIndex).getRank();
         sourceMovedList.add(sourceList.get(sourceRowIndex));
@@ -82,11 +95,12 @@ public class Deck {
             }
         }
         destinationList.addAll(sourceMovedList);
+        history.addToHistory(source, sourceMovedList.size(), destination, 1);
         sourceList.removeAll(sourceMovedList);
         sourceMovedList.clear();
     }
 
-    private void moveCards(int sourceRow, int sourceRowIndex, int destinationRow) {
+    public void moveCards(int sourceRow, int sourceRowIndex, int destinationRow) {
 
         stepCounter++;
 
@@ -97,9 +111,9 @@ public class Deck {
 
             if (!sourceList.isEmpty() && sourceRowIndex < sourceList.size()
                     && !destinationList.isEmpty() && (sourceList.get(sourceRowIndex).getRank() - destinationList.get(destinationList.size() - 1).getRank() == -1)) {
-                moveCardsCore(sourceMovedList, sourceList, destinationList, sourceRowIndex);
+                moveCardsCore(sourceMovedList, sourceList, destinationList, sourceRow, sourceRowIndex, destinationRow);
             } else if (!sourceList.isEmpty() && sourceRowIndex < sourceList.size() && destinationList.isEmpty()) {
-                moveCardsCore(sourceMovedList, sourceList, destinationList, sourceRowIndex);
+                moveCardsCore(sourceMovedList, sourceList, destinationList, sourceRow, sourceRowIndex, destinationRow);
             } else {
                 System.out.println("WRONG INDEX OF SOURCE LIST OR LIST IS EMPTY !!!");
             }
@@ -216,6 +230,9 @@ public class Deck {
         for (int i = 0; i < columns.length; i++) {
             if (checkLengthOfColumns(tableau.getColumns()) && removeItemFromArrayIndex <= 49) {
                 tableau.getColumns()[i].add(stock.getStock()[removeItemFromArrayIndex++]);
+                if (i == columns.length - 1) {
+                    history.addToHistory(0, 0, 0, 2);
+                }
             } else {
                 System.out.println("STOCK IS EMPTY OR TABLEAU HAS EMPTY ROW");
                 break;
