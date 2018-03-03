@@ -2,6 +2,7 @@ package sk.spacecode.spidersolitare.features;
 
 import sk.spacecode.spidersolitare.card.Card;
 import sk.spacecode.spidersolitare.deck.Deck;
+import sk.spacecode.spidersolitare.deck.Foundations;
 import sk.spacecode.spidersolitare.deck.Tableau;
 
 import java.util.ArrayList;
@@ -15,7 +16,7 @@ public class History {
         revertList = new ArrayList<>();
     }
 
-    public void removeFromHistory(Tableau tableau, Deck deck) {
+    public void removeFromHistory(Tableau tableau, Deck deck, Foundations foundations) {
 
         List<Card> cardToRevert = new ArrayList<>();
 
@@ -30,7 +31,7 @@ public class History {
                     int destination = revertList.get(revertList.size() - 1)[0];
 
                     for (int i = sourceIndex; i < tableau.getColumns()[source].size(); i++) {
-                        cardToRevert.add(tableau.getColumns()[source].get(sourceIndex));
+                        cardToRevert.add(tableau.getColumns()[source].get(i));
                     }
                     tableau.getColumns()[destination].get(tableau.getColumns()[destination].size() - 1).setFlipped(false);
                     tableau.getColumns()[destination].addAll(cardToRevert);
@@ -47,6 +48,24 @@ public class History {
                     Deck.removeItemFromArrayIndex -= 10;
                     deck.setStepCounter(deck.getStepCounter() - 1);
                     revertList.remove(revertList.size() - 1);
+                    break;
+                }
+
+                case 3: {
+                    int destination = revertList.get(revertList.size() - 1)[2];
+
+                    foundations.setFoundationIndex(foundations.getFoundationIndex() - 1);
+                    foundations.setFoundationFilled(foundations.getFoundationFilled() - 1);
+                    tableau.getColumns()[destination].addAll(foundations.getFoundationList()[foundations.getFoundationIndex()]);
+                    foundations.getFoundationList()[foundations.getFoundationIndex()].clear();
+                    revertList.remove(revertList.size() - 1);
+
+                    if (deck.getStepCounter() >= 20) {
+                        deck.setScore(deck.getScore() - (100 - deck.getStepCounter()));
+                    } else {
+                        deck.setScore(deck.getScore() - 100);
+                    }
+                    removeFromHistory(tableau, deck, foundations);
                     break;
                 }
             }

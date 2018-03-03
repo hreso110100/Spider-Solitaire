@@ -15,6 +15,7 @@ public class Deck {
     public static int removeItemFromArrayIndex = 0;
     private int score;
     private int stepCounter;
+    private int inputDestinationRow;
 
     public Deck() {
         foundations = new Foundations();
@@ -43,6 +44,14 @@ public class Deck {
         this.stepCounter = stepCounter;
     }
 
+    public int getScore() {
+        return score;
+    }
+
+    public void setScore(int score) {
+        this.score = score;
+    }
+
     private void game() {
         while (true) {
             Scanner scanner = new Scanner(System.in);
@@ -55,13 +64,13 @@ public class Deck {
                     System.out.println("ENTER SOURCE ROW INDEX");
                     int inputSourceRowIndex = scanner.nextInt();
                     System.out.println("ENTER DESTINATION ROW");
-                    int inputDestinationRow = scanner.nextInt();
+                    inputDestinationRow = scanner.nextInt();
 
                     moveCards(inputSourceRow, inputSourceRowIndex, inputDestinationRow);
                     break;
                 }
                 case "revert": {
-                    history.removeFromHistory(tableau, this);
+                    history.removeFromHistory(tableau, this, foundations);
                     drawDeck();
                     break;
                 }
@@ -100,7 +109,7 @@ public class Deck {
         sourceMovedList.clear();
     }
 
-    public void moveCards(int sourceRow, int sourceRowIndex, int destinationRow) {
+    private void moveCards(int sourceRow, int sourceRowIndex, int destinationRow) {
 
         stepCounter++;
 
@@ -145,6 +154,7 @@ public class Deck {
                         countScore();
                         foundations.addRunAndCheckWin(run);
                         tableau.getColumns()[i].removeAll(run);
+                        history.addToHistory(0, 0, inputDestinationRow, 3);
                         run.clear();
                     } else {
                         run.clear();
