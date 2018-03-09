@@ -2,7 +2,10 @@ package sk.spacecode.spidersolitare.deck;
 
 import sk.spacecode.spidersolitare.card.Card;
 import sk.spacecode.spidersolitare.card.Pack;
+import sk.spacecode.spidersolitare.entities.Score;
 import sk.spacecode.spidersolitare.features.History;
+import sk.spacecode.spidersolitare.services.ScoreService;
+import sk.spacecode.spidersolitare.services.ScoreServiceJDBC;
 
 import java.util.*;
 
@@ -59,7 +62,7 @@ public class Deck {
 
             switch (input) {
                 case "move": {
-                    System.out.println("ENTER SOURCER ROW");
+                    System.out.println("ENTER SOURCE ROW");
                     int inputSourceRow = scanner.nextInt();
                     System.out.println("ENTER SOURCE ROW INDEX");
                     int inputSourceRowIndex = scanner.nextInt();
@@ -74,8 +77,6 @@ public class Deck {
                     drawDeck();
                     break;
                 }
-                case "hint":
-                    break;
                 case "restart":
                     Deck deck = new Deck();
                     break;
@@ -85,6 +86,7 @@ public class Deck {
                 case "exit":
                     System.exit(0);
                     break;
+
             }
         }
     }
@@ -111,8 +113,6 @@ public class Deck {
 
     private void moveCards(int sourceRow, int sourceRowIndex, int destinationRow) {
 
-        stepCounter++;
-
         if (sourceRow < tableau.getColumns().length && destinationRow < tableau.getColumns().length) {
             List<Card> sourceList = tableau.getColumns()[sourceRow];
             List<Card> destinationList = tableau.getColumns()[destinationRow];
@@ -121,13 +121,15 @@ public class Deck {
             if (!sourceList.isEmpty() && sourceRowIndex < sourceList.size()
                     && !destinationList.isEmpty() && (sourceList.get(sourceRowIndex).getRank() - destinationList.get(destinationList.size() - 1).getRank() == -1)) {
                 moveCardsCore(sourceMovedList, sourceList, destinationList, sourceRow, sourceRowIndex, destinationRow);
+                stepCounter++;
             } else if (!sourceList.isEmpty() && sourceRowIndex < sourceList.size() && destinationList.isEmpty()) {
                 moveCardsCore(sourceMovedList, sourceList, destinationList, sourceRow, sourceRowIndex, destinationRow);
+                stepCounter++;
             } else {
                 System.out.println("WRONG INDEX OF SOURCE LIST OR LIST IS EMPTY !!!");
             }
         } else {
-            System.out.println("SOURE ROW OR DESTINATION ROW OUT OF INDEX !!!");
+            System.out.println("SOURCE ROW OR DESTINATION ROW OUT OF INDEX !!!");
         }
         checkForFullRun();
         drawDeck();
@@ -149,19 +151,30 @@ public class Deck {
                             startOfRun = tableau.getColumns()[i].get(k).getRank();
                         }
                     }
-
-                    if (run.size() == 13) {
-                        countScore();
-                        foundations.addRunAndCheckWin(run);
-                        tableau.getColumns()[i].removeAll(run);
-                        history.addToHistory(0, 0, inputDestinationRow, 3);
-                        run.clear();
-                    } else {
-                        run.clear();
-                    }
+                    winGame(run, i);
                 }
             }
         }
+    }
+
+    private void winGame(List<Card> run, int i) {
+        if (run.size() == 13) {
+            countScore();
+            foundations.addRunAndCheckWin(run);
+            tableau.getColumns()[i].removeAll(run);
+            history.addToHistory(0, 0, inputDestinationRow, 3);
+            run.clear();
+            callScoreService();
+        } else {
+            run.clear();
+        }
+    }
+
+    private void callScoreService() {
+        Score score = new Score("david", getScore(), new Date());
+        ScoreService scoreService = new ScoreServiceJDBC();
+        scoreService.addScore(score);
+        System.out.println(scoreService.getBestScores("spider-solitaire"));
     }
 
     private void countScore() {
