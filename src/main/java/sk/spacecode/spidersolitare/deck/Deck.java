@@ -2,10 +2,11 @@ package sk.spacecode.spidersolitare.deck;
 
 import sk.spacecode.spidersolitare.card.Card;
 import sk.spacecode.spidersolitare.card.Pack;
+import sk.spacecode.spidersolitare.entities.Comment;
+import sk.spacecode.spidersolitare.entities.Rating;
 import sk.spacecode.spidersolitare.entities.Score;
 import sk.spacecode.spidersolitare.features.History;
-import sk.spacecode.spidersolitare.services.ScoreService;
-import sk.spacecode.spidersolitare.services.ScoreServiceJDBC;
+import sk.spacecode.spidersolitare.services.*;
 
 import java.util.*;
 
@@ -26,12 +27,12 @@ public class Deck {
         tableau = new Tableau();
         pack = new Pack();
         history = new History();
-        shuffleAndServeCards(1);
+        shuffleAndServeCards();
         game();
     }
 
-    private void shuffleAndServeCards(int typeOfGame) {
-        pack.createCardPack(typeOfGame);
+    private void shuffleAndServeCards() {
+        pack.createCardPack();
         Card[] cardArray = pack.getCardPack();
         Collections.shuffle(Arrays.asList(cardArray));
         tableau.fillTableau(cardArray);
@@ -83,10 +84,16 @@ public class Deck {
                 case "take":
                     takeCardsFromStock(tableau.getColumns());
                     break;
-                case "exit":
+                case "exit": {
+
+                    // TODO vymazat volania servisov po odovzdavke
+
+                    callScoreService();
+                    callCommentService();
+                    callRatingService();
                     System.exit(0);
                     break;
-
+                }
             }
         }
     }
@@ -165,6 +172,8 @@ public class Deck {
             history.addToHistory(0, 0, inputDestinationRow, 3);
             run.clear();
             callScoreService();
+            callCommentService();
+            callRatingService();
         } else {
             run.clear();
         }
@@ -176,6 +185,32 @@ public class Deck {
         scoreService.addScore(score);
         System.out.println(scoreService.getBestScores("spider-solitaire"));
     }
+
+    private void callCommentService() {
+        Scanner scanner = new Scanner(System.in);
+        String input = scanner.nextLine();
+
+        Comment comment = new Comment("david", input, new Date());
+        CommentService commentService = new CommentServiceJDBC();
+        commentService.addComment(comment);
+        System.out.println(commentService.getComments("spider-solitaire"));
+    }
+
+    private void callRatingService() {
+        Scanner scanner = new Scanner(System.in);
+        Integer input = scanner.nextInt();
+
+        Rating rating = new Rating("david", input, new Date());
+        RatingService ratingService = new RatingServiceJDBC();
+        ratingService.setRating(rating);
+        try {
+            System.out.println(ratingService.getRating("spider-solitaire", "david"));
+            System.out.println("AVERAGE RATING OF GAME IS " + ratingService.getAverageRating("spider-solitaire"));
+        }catch (NullPointerException e) {
+            System.out.println("ROW DOESN'T EXIST");
+        }
+    }
+
 
     private void countScore() {
         if (stepCounter < 20) {

@@ -12,15 +12,12 @@ public class Pack {
         return cardPack;
     }
 
-    public void createCardPack(int typeOfGame) {
+    public void createCardPack() {
         int index = 0;
-        switch (typeOfGame) {
-            case 1: {
-                for (int i = 0; i < 8; i++) {
-                    for (int j = 1; j <= 13; j++) {
-                        cardPack[index++] = new Card(j, "black", "spades", false);
-                    }
-                }
+
+        for (int i = 0; i < 8; i++) {
+            for (int j = 1; j <= 13; j++) {
+                cardPack[index++] = new Card(j, "black", "spades", false);
             }
         }
     }

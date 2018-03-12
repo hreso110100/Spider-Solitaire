@@ -8,9 +8,9 @@ public class Comment {
     private String comment;
     private Date commentedOn;
 
-    public Comment(String player, String game, String comment, Date commentedOn) {
+    public Comment(String player, String comment, Date commentedOn) {
         this.player = player;
-        this.game = game;
+        this.game = "spider-solitaire";
         this.comment = comment;
         this.commentedOn = commentedOn;
     }
@@ -49,12 +49,10 @@ public class Comment {
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder("Comment{");
-        sb.append("player='").append(player).append('\'');
-        sb.append(", game='").append(game).append('\'');
-        sb.append(", comment='").append(comment).append('\'');
-        sb.append(", commentedOn=").append(commentedOn);
-        sb.append('}');
-        return sb.toString();
+        return "Comment{" + "player='" + player + '\'' +
+                ", game='" + game + '\'' +
+                ", comment='" + comment + '\'' +
+                ", commentedOn=" + commentedOn +
+                '}';
     }
 }

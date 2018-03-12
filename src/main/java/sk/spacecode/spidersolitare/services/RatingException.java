@@ -1,6 +1,6 @@
 package sk.spacecode.spidersolitare.services;
 
-public class RatingException extends Exception {
+public class RatingException extends RuntimeException {
     public RatingException(String message) {
         super(message);
     }

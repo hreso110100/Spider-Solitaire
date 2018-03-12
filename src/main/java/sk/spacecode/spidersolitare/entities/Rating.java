@@ -8,9 +8,9 @@ public class Rating {
     private int rating;
     private Date ratedon;
 
-    public Rating(String player, String game, int rating, Date ratedon) {
+    public Rating(String player, int rating, Date ratedon) {
         this.player = player;
-        this.game = game;
+        this.game = "spider-solitaire";
         this.rating = rating;
         this.ratedon = ratedon;
     }
@@ -49,12 +49,10 @@ public class Rating {
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder("Rating{");
-        sb.append("player='").append(player).append('\'');
-        sb.append(", game='").append(game).append('\'');
-        sb.append(", rating=").append(rating);
-        sb.append(", ratedon=").append(ratedon);
-        sb.append('}');
-        return sb.toString();
+        return "Rating{" + "player='" + player + '\'' +
+                ", game='" + game + '\'' +
+                ", rating=" + rating +
+                ", ratedon=" + ratedon +
+                '}';
     }
 }

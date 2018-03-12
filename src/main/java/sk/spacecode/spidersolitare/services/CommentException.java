@@ -1,6 +1,6 @@
 package sk.spacecode.spidersolitare.services;
 
-public class CommentException extends Exception {
+public class CommentException extends RuntimeException {
     public CommentException(String message) {
         super(message);
     }
