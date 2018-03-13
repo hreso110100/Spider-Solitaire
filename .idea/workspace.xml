@@ -2,15 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="36fc79a6-226d-47da-86f7-58ecb17b992b" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/2efd5e81-9a31-4ff7-b988-691b0f43dfa2.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/2efd5e81-9a31-4ff7-b988-691b0f43dfa2.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sk/spacecode/spidersolitare/card/Pack.java" afterPath="$PROJECT_DIR$/src/main/java/sk/spacecode/spidersolitare/card/Pack.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sk/spacecode/spidersolitare/deck/Deck.java" afterPath="$PROJECT_DIR$/src/main/java/sk/spacecode/spidersolitare/deck/Deck.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sk/spacecode/spidersolitare/entities/Comment.java" afterPath="$PROJECT_DIR$/src/main/java/sk/spacecode/spidersolitare/entities/Comment.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sk/spacecode/spidersolitare/entities/Rating.java" afterPath="$PROJECT_DIR$/src/main/java/sk/spacecode/spidersolitare/entities/Rating.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sk/spacecode/spidersolitare/services/CommentException.java" afterPath="$PROJECT_DIR$/src/main/java/sk/spacecode/spidersolitare/services/CommentException.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sk/spacecode/spidersolitare/services/CommentServiceJDBC.java" afterPath="$PROJECT_DIR$/src/main/java/sk/spacecode/spidersolitare/services/CommentServiceJDBC.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sk/spacecode/spidersolitare/services/RatingException.java" afterPath="$PROJECT_DIR$/src/main/java/sk/spacecode/spidersolitare/services/RatingException.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sk/spacecode/spidersolitare/services/RatingServiceJDBC.java" afterPath="$PROJECT_DIR$/src/main/java/sk/spacecode/spidersolitare/services/RatingServiceJDBC.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -68,15 +59,16 @@
       <file leaf-file-name="RatingServiceJDBC.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/sk/spacecode/spidersolitare/services/RatingServiceJDBC.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="372">
-              <caret line="25" column="85" lean-forward="true" selection-start-line="25" selection-start-column="85" selection-end-line="25" selection-end-column="85" />
+            <state relative-caret-position="584">
+              <caret line="41" column="61" lean-forward="false" selection-start-line="41" selection-start-column="61" selection-end-line="41" selection-end-column="61" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <marker date="1520883599105" expanded="true" signature="711:781" ph="INSERT INTO rating... " />
-                <marker date="1520883599105" expanded="true" signature="846:907" ph="SELECT playe... rating" />
-                <marker date="1520883599105" expanded="true" signature="846:926" ph="SELECT playe... rating" />
-                <marker date="1520883599105" expanded="true" signature="846:941" ph="SELECT playe... rating" />
-                <marker date="1520883599105" expanded="true" signature="1014:1094" ph="SELECT playe... rating" />
+                <marker date="1520954943298" expanded="true" signature="711:781" ph="INSERT INTO rating... " />
+                <marker date="1520954943298" expanded="true" signature="711:816" ph="INSERT INTO rating... " />
+                <marker date="1520954943298" expanded="true" signature="881:942" ph="SELECT playe... rating" />
+                <marker date="1520954943298" expanded="true" signature="881:961" ph="SELECT playe... rating" />
+                <marker date="1520954943298" expanded="true" signature="881:976" ph="SELECT playe... rating" />
+                <marker date="1520954943298" expanded="true" signature="1049:1129" ph="SELECT playe... rating" />
               </folding>
             </state>
           </provider>
@@ -136,8 +128,8 @@
         <option value="$PROJECT_DIR$/src/main/java/sk/spacecode/spidersolitare/services/CommentServiceJDBC.java" />
         <option value="$PROJECT_DIR$/src/main/java/sk/spacecode/spidersolitare/services/RatingException.java" />
         <option value="$PROJECT_DIR$/src/main/java/sk/spacecode/spidersolitare/entities/Rating.java" />
-        <option value="$PROJECT_DIR$/src/main/java/sk/spacecode/spidersolitare/services/RatingServiceJDBC.java" />
         <option value="$PROJECT_DIR$/src/main/java/sk/spacecode/spidersolitare/deck/Deck.java" />
+        <option value="$PROJECT_DIR$/src/main/java/sk/spacecode/spidersolitare/services/RatingServiceJDBC.java" />
       </list>
     </option>
   </component>
@@ -396,12 +388,12 @@
       <workItem from="1520359779591" duration="14064000" />
       <workItem from="1520602123079" duration="17935000" />
       <workItem from="1520701044937" duration="61000" />
-      <workItem from="1520767783079" duration="18263000" />
+      <workItem from="1520767783079" duration="19256000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="188609000" />
+    <option name="totallyTimeSpent" value="189602000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -433,7 +425,7 @@
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32951945" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32837528" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.72883296" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.7871854" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32837528" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23200859" sideWeight="0.5091533" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32951945" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -847,15 +839,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/sk/spacecode/spidersolitare/services/RatingServiceJDBC.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="372">
-          <caret line="25" column="85" lean-forward="true" selection-start-line="25" selection-start-column="85" selection-end-line="25" selection-end-column="85" />
+        <state relative-caret-position="584">
+          <caret line="41" column="61" lean-forward="false" selection-start-line="41" selection-start-column="61" selection-end-line="41" selection-end-column="61" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1520883599105" expanded="true" signature="711:781" ph="INSERT INTO rating... " />
-            <marker date="1520883599105" expanded="true" signature="846:907" ph="SELECT playe... rating" />
-            <marker date="1520883599105" expanded="true" signature="846:926" ph="SELECT playe... rating" />
-            <marker date="1520883599105" expanded="true" signature="846:941" ph="SELECT playe... rating" />
-            <marker date="1520883599105" expanded="true" signature="1014:1094" ph="SELECT playe... rating" />
+            <marker date="1520954943298" expanded="true" signature="711:781" ph="INSERT INTO rating... " />
+            <marker date="1520954943298" expanded="true" signature="711:816" ph="INSERT INTO rating... " />
+            <marker date="1520954943298" expanded="true" signature="881:942" ph="SELECT playe... rating" />
+            <marker date="1520954943298" expanded="true" signature="881:961" ph="SELECT playe... rating" />
+            <marker date="1520954943298" expanded="true" signature="881:976" ph="SELECT playe... rating" />
+            <marker date="1520954943298" expanded="true" signature="1049:1129" ph="SELECT playe... rating" />
           </folding>
         </state>
       </provider>

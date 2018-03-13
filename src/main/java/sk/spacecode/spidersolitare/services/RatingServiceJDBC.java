@@ -23,7 +23,7 @@ public class RatingServiceJDBC implements RatingService {
     private static final String PASSWORD = "benqfp7ig";
 
     private static final String INSERT_RATING =
-            "INSERT INTO rating (player, game, rating, ratedon) VALUES (?, ?, ?, ?)";
+            "INSERT INTO rating (player, game, rating, ratedon) VALUES (?, ?, ?, ?) ON DUPLICATE KEY UPDATE rating = ?";
 
     private static final String SELECT_RATING =
             "SELECT player, game, rating, ratedon FROM rating WHERE game = 'spider-solitaire' AND player = ?";
@@ -39,6 +39,7 @@ public class RatingServiceJDBC implements RatingService {
                 preparedStatement.setString(2, rating.getGame());
                 preparedStatement.setInt(3, rating.getRating());
                 preparedStatement.setDate(4, new Date(rating.getRatedon().getTime()));
+                preparedStatement.setInt(5,rating.getRating());
 
                 preparedStatement.executeUpdate();
             }
