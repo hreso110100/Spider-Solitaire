@@ -1,4 +1,4 @@
-import sk.spacecode.spidersolitare.deck.Deck;
+import sk.tuke.gamestudio.spidersolitaire.deck.Deck;
 
 public class Main {
 
