@@ -24,7 +24,7 @@ public class ScoreServiceTest {
     }
 
     @Test
-    public void testGestBestScores() throws Exception {
+    public void testGetBestScores() throws Exception {
         Score s1 = new Score("player1", 200, new Date());
         Score s2 = new Score("player2", 300, new Date());
 

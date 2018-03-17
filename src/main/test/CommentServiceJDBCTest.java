@@ -1,20 +1,21 @@
 import org.junit.Before;
 import org.junit.Test;
-import sk.tuke.gamestudio.spidersolitaire.services.RatingServiceJDBC;
+import sk.tuke.gamestudio.spidersolitaire.services.CommentServiceJDBC;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.Statement;
 
-public class RatingServiceJDBCTest extends RatingServiceTest {
-    private static final String DELETE = "DELETE FROM score";
+public class CommentServiceJDBCTest extends CommentServiceTest {
+
+    private static final String DELETE = "DELETE FROM comment";
 
     private static final String URL = "jdbc:mysql://localhost:3306/gamestudio";
     private static final String USER = "root";
     private static final String PASS = "benqfp7ig";
 
-    public RatingServiceJDBCTest() {
-        super.ratingService = new RatingServiceJDBC();
+    public CommentServiceJDBCTest() {
+        super.commentService = new CommentServiceJDBC();
     }
 
     @Before
@@ -25,19 +26,17 @@ public class RatingServiceJDBCTest extends RatingServiceTest {
     }
 
     @Test
-    public void testAddRating() throws Exception {
-        super.testAddRating();
+    public void testDbInit() throws Exception {
+        super.testDbInit();
     }
 
     @Test
-    public void testGetRating() throws Exception {
-        super.testGetRating();
+    public void testAddComment() throws Exception {
+        super.testAddComment();
     }
-
 
     @Test
-    public void testGetAverageRating() throws Exception {
-        super.testGetAverageRating();
+    public void testGetComments() throws Exception {
+        super.testGetComments();
     }
-
 }

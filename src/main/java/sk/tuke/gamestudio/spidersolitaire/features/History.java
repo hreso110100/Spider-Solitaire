@@ -72,10 +72,9 @@ public class History {
                 case 3: {
                     int destination = revertList.get(revertList.size() - 1)[2];
 
-                    foundations.setFoundationIndex(foundations.getFoundationIndex() - 1);
-                    foundations.setFoundationFilled(foundations.getFoundationFilled() - 1);
-                    tableau.getColumns()[destination].addAll(foundations.getFoundationList()[foundations.getFoundationIndex()]);
-                    foundations.getFoundationList()[foundations.getFoundationIndex()].clear();
+                    deck.setFoundationIndex(deck.getFoundationIndex() - 1);
+                    tableau.getColumns()[destination].addAll(foundations.getFoundationList()[deck.getFoundationIndex()]);
+                    foundations.getFoundationList()[deck.getFoundationIndex()].clear();
                     revertList.remove(revertList.size() - 1);
 
                     if (deck.getStepCounter() >= 20) {

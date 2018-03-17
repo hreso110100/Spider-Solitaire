@@ -1,6 +1,9 @@
 package sk.tuke.gamestudio.spidersolitaire.deck;
 
 import sk.tuke.gamestudio.spidersolitaire.card.Card;
+import sk.tuke.gamestudio.spidersolitaire.services.CommentServiceJDBC;
+import sk.tuke.gamestudio.spidersolitaire.services.RatingServiceJDBC;
+import sk.tuke.gamestudio.spidersolitaire.services.ScoreServiceJDBC;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,8 +15,6 @@ import java.util.List;
 public class Foundations {
 
     private List<Card>[] foundationList;
-    private int foundationFilled;
-    private int foundationIndex;
 
     @SuppressWarnings("unchecked")
     Foundations() {
@@ -30,38 +31,9 @@ public class Foundations {
         };
     }
 
-    /**
-     * @param run represents one run
-     */
-
-    public void addRunAndCheckWin(List<Card> run) {
-        foundationList[foundationIndex++].addAll(run);
-        foundationFilled++;
-
-        if (foundationFilled == 8) {
-            System.out.println("CONGRATULATIONS, YOU ARE WINNER !!!");
-        }
-    }
-
     // getters and setters
 
     public List<Card>[] getFoundationList() {
         return foundationList;
-    }
-
-    public int getFoundationFilled() {
-        return foundationFilled;
-    }
-
-    public void setFoundationFilled(int foundationFilled) {
-        this.foundationFilled = foundationFilled;
-    }
-
-    public int getFoundationIndex() {
-        return foundationIndex;
-    }
-
-    public void setFoundationIndex(int foundationIndex) {
-        this.foundationIndex = foundationIndex;
     }
 }

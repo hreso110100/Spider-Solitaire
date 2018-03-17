@@ -25,6 +25,7 @@ public class Deck {
     private int score;
     private int stepCounter;
     private int inputDestinationRow;
+    private int foundationIndex;
 
     public Deck() {
         foundations = new Foundations();
@@ -156,6 +157,22 @@ public class Deck {
         }
         checkForFullRun();
         drawDeck();
+
+        if (checkIfGameIsLost()) {
+            afterLost();
+        }
+    }
+
+    /**
+     * This method call services after game is lost
+     */
+
+    private void afterLost() {
+        System.out.println("YOU LOST !");
+        callScoreService();
+        callCommentService();
+        callRatingService();
+        System.exit(0);
     }
 
     /**
@@ -178,33 +195,78 @@ public class Deck {
                             startOfRun = tableau.getColumns()[i].get(k).getRank();
                         }
                     }
-                    winGame(run, i);
+                    addRunToFoundations(run, i);
                 }
             }
         }
     }
 
     /**
-     * Check foundation length is 13
+     * This method add run to foundation
      *
      * @param run       input run which is added to foundations
      * @param sourceRow represents row from which is run removed
      */
 
-    private void winGame(List<Card> run, int sourceRow) {
+    private void addRunToFoundations(List<Card> run, int sourceRow) {
         if (run.size() == 13) {
             countScore();
-            foundations.addRunAndCheckWin(run);
+            checkIfGameIsWon(run);
             tableau.getColumns()[sourceRow].removeAll(run);
             history.addToHistory(0, 0, inputDestinationRow, 3);
             run.clear();
-            callScoreService();
-            callCommentService();
-            callRatingService();
         } else {
             run.clear();
         }
     }
+
+    /**
+     * This method check if game is won
+     *
+     * @param run run of cards which are added to foundations
+     */
+
+    private void checkIfGameIsWon(List<Card> run) {
+        foundations.getFoundationList()[getFoundationIndex()].addAll(run);
+        setFoundationIndex(getFoundationIndex() + 1);
+
+        if (foundations.getFoundationList().length == 8) {
+            System.out.println("CONGRATULATIONS, YOU ARE WINNER !!!");
+            callScoreService();
+            callCommentService();
+            callRatingService();
+        }
+    }
+
+    /**
+     * This method check if game is lost
+     *
+     * @return true if yes or false if not
+     */
+
+    private boolean checkIfGameIsLost() {
+        if (removeItemFromArrayIndex == 50) {
+            for (int i = 0; i < tableau.getColumns().length; i++) {
+                Card startOfRun = tableau.getColumns()[i].get(tableau.getColumns()[i].size() - 1);
+                for (int j = tableau.getColumns()[i].size() - 2; j > 0; j--) {
+                    if (tableau.getColumns()[i].get(j).getRank() - startOfRun.getRank() == 1 && tableau.getColumns()[i].get(j).isFlipped()) {
+                        startOfRun = tableau.getColumns()[i].get(j);
+                    }
+                }
+
+                for (int k = 0; k < tableau.getColumns().length; k++) {
+                    Card lastItemOfColumn = tableau.getColumns()[k].get(tableau.getColumns()[k].size() - 1);
+
+                    if (i != k && startOfRun.getRank() - lastItemOfColumn.getRank() == -1) {
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
+        return false;
+    }
+
 
     /**
      * This method call score service
@@ -214,7 +276,11 @@ public class Deck {
         Score score = new Score("david", getScore(), new Date());
         ScoreService scoreService = new ScoreServiceJDBC();
         scoreService.addScore(score);
-        System.out.println(scoreService.getBestScores("spider-solitaire"));
+        System.out.println("BEST SCORES");
+        for (int i = 0; i < scoreService.getBestScores("spider-solitaire").size(); i++) {
+            System.out.println(scoreService.getBestScores("spider-solitaire").get(i).getPlayer() + " " +
+                    scoreService.getBestScores("spider-solitaire").get(i).getPoints());
+        }
     }
 
     /**
@@ -223,12 +289,17 @@ public class Deck {
 
     private void callCommentService() {
         Scanner scanner = new Scanner(System.in);
+        System.out.println("ENTER YOUR COMMENT: ");
         String input = scanner.nextLine();
 
         Comment comment = new Comment("david", input, new Date());
         CommentService commentService = new CommentServiceJDBC();
         commentService.addComment(comment);
-        System.out.println(commentService.getComments("spider-solitaire"));
+        System.out.println("RECENT COMMENTS");
+        for (int i = 0; i < commentService.getComments("spider-solitaire").size(); i++) {
+            System.out.println(commentService.getComments("spider-solitaire").get(i).getPlayer() + " " +
+                    commentService.getComments("spider-solitaire").get(i).getComment());
+        }
     }
 
     /**
@@ -237,6 +308,7 @@ public class Deck {
 
     private void callRatingService() {
         Scanner scanner = new Scanner(System.in);
+        System.out.println("ENTER YOUR RATING");
         Integer input = scanner.nextInt();
 
         Rating rating = new Rating("david", input, new Date());
@@ -244,7 +316,6 @@ public class Deck {
         ratingService.setRating(rating);
 
         try {
-            System.out.println(ratingService.getRating("spider-solitaire", "david"));
             System.out.println("AVERAGE RATING OF GAME IS " + ratingService.getAverageRating("spider-solitaire"));
         } catch (NullPointerException e) {
             System.out.println("ROW DOESN'T EXIST");
@@ -349,13 +420,16 @@ public class Deck {
 
         for (int i = 0; i < columns.length; i++) {
             if (checkLengthOfColumns(tableau.getColumns()) && removeItemFromArrayIndex <= 49) {
-                stepCounter++;
                 tableau.getColumns()[i].add(stock.getStock()[removeItemFromArrayIndex++]);
                 if (i == columns.length - 1) {
                     history.addToHistory(0, 0, 0, 2);
+                    stepCounter++;
                 }
             } else {
                 System.out.println("STOCK IS EMPTY OR TABLEAU HAS EMPTY ROW");
+                if (checkIfGameIsLost()) {
+                    afterLost();
+                }
                 break;
             }
         }
@@ -379,5 +453,13 @@ public class Deck {
 
     public void setScore(int score) {
         this.score = score;
+    }
+
+    public int getFoundationIndex() {
+        return foundationIndex;
+    }
+
+    public void setFoundationIndex(int foundationIndex) {
+        this.foundationIndex = foundationIndex;
     }
 }

@@ -23,7 +23,7 @@ public class Tableau {
     private List<Card> tableau9;
     private List<Card> tableau10;
 
-    Tableau() {
+    public Tableau() {
         tableau1 = new ArrayList<>();
         tableau2 = new ArrayList<>();
         tableau3 = new ArrayList<>();

@@ -9,7 +9,7 @@ public class Card {
     private int rank;
     private boolean flipped;
 
-    Card(int rank, boolean flipped) {
+    public Card(int rank, boolean flipped) {
         this.rank = rank;
         this.flipped = flipped;
     }
@@ -28,4 +28,7 @@ public class Card {
         return rank;
     }
 
+    public void setRank(int rank) {
+        this.rank = rank;
+    }
 }

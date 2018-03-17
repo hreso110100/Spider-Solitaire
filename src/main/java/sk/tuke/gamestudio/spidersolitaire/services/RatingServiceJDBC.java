@@ -21,7 +21,7 @@ import java.util.List;
 
 public class RatingServiceJDBC implements RatingService {
 
-    private static final String URL = "jdbc:mysql://localhost:3306/gamestudio";
+    private static final String URL = "jdbc:mysql://localhost:3306/gamestudio?verifyServerCertificate=false&useSSL=true";
     private static final String USER = "root";
     private static final String PASSWORD = "benqfp7ig";
 

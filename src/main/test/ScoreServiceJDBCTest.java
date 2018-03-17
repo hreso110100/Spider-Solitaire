@@ -36,7 +36,7 @@ public class ScoreServiceJDBCTest extends ScoreServiceTest {
     }
 
     @Test
-    public void testGestBestScores() throws Exception {
-        super.testGestBestScores();
+    public void testGetBestScores() throws Exception {
+        super.testGetBestScores();
     }
 }
