@@ -26,6 +26,7 @@ public class Deck {
     private int stepCounter;
     private int inputDestinationRow;
     private int foundationIndex;
+    private int foundationsFilled;
 
     public Deck() {
         foundations = new Foundations();
@@ -237,8 +238,8 @@ public class Deck {
     private void checkIfGameIsWon(List<Card> run) {
         foundations.getFoundationList()[getFoundationIndex()].addAll(run);
         setFoundationIndex(getFoundationIndex() + 1);
-
-        if (foundations.getFoundationList().length == 8) {
+        foundationsFilled++;
+        if (foundationsFilled == 8) {
             System.out.println("CONGRATULATIONS, YOU ARE WINNER !!!");
             callScoreService();
             callCommentService();
@@ -354,7 +355,8 @@ public class Deck {
                 size = tableau.getColumns()[i].size();
             }
         }
-        System.out.println("SCORE " + score + " STEPS " + stepCounter + '\n');
+        System.out.println("SCORE " + score + " STEPS " + stepCounter);
+        System.out.println("FOUNDATIONS " + foundationsFilled + " STOCK " + (5 - removeItemFromArrayIndex / 10) + '\n');
         System.out.print("COL      ");
 
         for (int j = 0; j < size; j++) {
