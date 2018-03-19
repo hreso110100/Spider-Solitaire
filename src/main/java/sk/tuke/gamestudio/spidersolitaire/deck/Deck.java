@@ -56,20 +56,26 @@ public class Deck {
 
     private void game() {
         while (true) {
+            System.out.println("Enter your command");
             Scanner scanner = new Scanner(System.in);
             String input = scanner.nextLine();
 
             switch (input) {
                 case "move": {
-                    System.out.println("ENTER SOURCE ROW");
-                    int inputSourceRow = scanner.nextInt();
-                    System.out.println("ENTER SOURCE ROW INDEX");
-                    int inputSourceRowIndex = scanner.nextInt();
-                    System.out.println("ENTER DESTINATION ROW");
-                    inputDestinationRow = scanner.nextInt();
+                    try {
+                        System.out.println("ENTER SOURCE ROW");
+                        int inputSourceRow = scanner.nextInt();
+                        System.out.println("ENTER SOURCE ROW INDEX");
+                        int inputSourceRowIndex = scanner.nextInt();
+                        System.out.println("ENTER DESTINATION ROW");
+                        inputDestinationRow = scanner.nextInt();
 
-                    moveCards(inputSourceRow, inputSourceRowIndex, inputDestinationRow);
-                    break;
+                        moveCards(inputSourceRow, inputSourceRowIndex, inputDestinationRow);
+                        break;
+                    } catch (InputMismatchException e) {
+                        System.out.println("Wrong input, try again");
+                        break;
+                    }
                 }
                 case "revert": {
                     history.returnToPreviousStep(tableau, this, foundations);
@@ -92,6 +98,8 @@ public class Deck {
                     System.exit(0);
                     break;
                 }
+                default:
+                    System.out.println("Wrong command ! Try again");
             }
         }
     }
