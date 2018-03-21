@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="36fc79a6-226d-47da-86f7-58ecb17b992b" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/sk/tuke/gamestudio/spidersolitaire/deck/ConsoleUI.java" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" afterPath="$PROJECT_DIR$/src/main/java/Main.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sk/tuke/gamestudio/spidersolitaire/deck/Deck.java" afterPath="$PROJECT_DIR$/src/main/java/sk/tuke/gamestudio/spidersolitaire/deck/Deck.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sk/tuke/gamestudio/spidersolitaire/features/History.java" afterPath="$PROJECT_DIR$/src/main/java/sk/tuke/gamestudio/spidersolitaire/features/History.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -20,9 +24,11 @@
     <option name="GROUP_SCHEMA" value="true" />
     <option name="GROUP_CONTENTS" value="false" />
     <option name="SORT_POSITIONED" value="false" />
-    <option name="SHOW_TABLE_DETAILS" value="true" />
     <option name="SHOW_EMPTY_GROUPS" value="false" />
     <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
     <expand>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
@@ -46,16 +52,42 @@
     <favorites_list name="CodeIris Favorites" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="FIRST">
-              <first_editor relative-caret-position="666">
-                <caret line="53" column="42" lean-forward="true" selection-start-line="53" selection-start-column="42" selection-end-line="53" selection-end-column="42" />
-                <folding />
-              </first_editor>
-              <second_editor />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+      <file leaf-file-name="Deck.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/sk/tuke/gamestudio/spidersolitaire/deck/Deck.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="400">
+              <caret line="77" column="9" lean-forward="false" selection-start-line="77" selection-start-column="9" selection-end-line="77" selection-end-column="9" />
+              <folding>
+                <element signature="e#11801#11802#0" expanded="true" />
+                <element signature="e#11835#11836#0" expanded="true" />
+                <element signature="e#12037#12038#0" expanded="true" />
+                <element signature="e#12065#12066#0" expanded="true" />
+                <element signature="e#12104#12105#0" expanded="true" />
+                <element signature="e#12138#12139#0" expanded="true" />
+                <element signature="e#12177#12178#0" expanded="true" />
+                <element signature="e#12215#12216#0" expanded="true" />
+                <element signature="e#12274#12275#0" expanded="true" />
+                <element signature="e#12328#12329#0" expanded="true" />
+                <element signature="e#12369#12370#0" expanded="true" />
+                <element signature="e#12409#12410#0" expanded="true" />
+                <element signature="e#12472#12473#0" expanded="true" />
+                <element signature="e#12530#12531#0" expanded="true" />
+                <element signature="e#12573#12574#0" expanded="true" />
+                <element signature="e#12607#12608#0" expanded="true" />
+                <element signature="e#12642#12643#0" expanded="true" />
+                <element signature="e#12672#12673#0" expanded="true" />
+                <element signature="e#12707#12708#0" expanded="true" />
+                <element signature="e#12737#12738#0" expanded="true" />
+                <element signature="e#12780#12781#0" expanded="true" />
+                <element signature="e#12822#12823#0" expanded="true" />
+                <element signature="e#12889#12890#0" expanded="true" />
+                <element signature="e#12951#12952#0" expanded="true" />
+                <element signature="e#12984#12985#0" expanded="true" />
+                <element signature="e#13016#13017#0" expanded="true" />
+                <element signature="e#13064#13065#0" expanded="true" />
+                <element signature="e#13106#13107#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -81,13 +113,11 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/sk/spacecode/spidersolitare/card/Pack.java" />
         <option value="$PROJECT_DIR$/src/sk/spacecode/spidersolitare/deck/Deck.java" />
         <option value="$PROJECT_DIR$/src/main/java/sk/spacecode/spidersolitare/PersistenceExecute.java" />
         <option value="$PROJECT_DIR$/src/main/resources/log4j.properties" />
         <option value="$PROJECT_DIR$/src/main/java/sk/spacecode/spidersolitare/entities/Player.java" />
         <option value="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/sk/spacecode/spidersolitare/services/ScoreService.java" />
         <option value="$PROJECT_DIR$/src/main/java/sk/spacecode/spidersolitare/services/RatingService.java" />
         <option value="$PROJECT_DIR$/src/main/java/sk/spacecode/spidersolitare/services/CommentService.java" />
@@ -121,7 +151,6 @@
         <option value="$PROJECT_DIR$/src/main/test/CommentServiceJDBCTest.java" />
         <option value="$PROJECT_DIR$/src/main/test/RatingServiceTest.java" />
         <option value="$PROJECT_DIR$/src/main/test/CommentServiceTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/sk/tuke/gamestudio/spidersolitaire/features/History.java" />
         <option value="$PROJECT_DIR$/src/main/java/sk/tuke/gamestudio/spidersolitaire/deck/Tableau.java" />
         <option value="$PROJECT_DIR$/src/main/test/DeckTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/sk/tuke/gamestudio/spidersolitaire/card/Pack.java" />
@@ -129,9 +158,12 @@
         <option value="$PROJECT_DIR$/src/main/java/sk/tuke/gamestudio/spidersolitaire/services/RatingServiceJDBC.java" />
         <option value="$PROJECT_DIR$/src/main/java/sk/tuke/gamestudio/spidersolitaire/services/ScoreServiceJDBC.java" />
         <option value="$PROJECT_DIR$/src/main/java/sk/tuke/gamestudio/spidersolitaire/card/Card.java" />
-        <option value="$PROJECT_DIR$/src/main/java/sk/tuke/gamestudio/spidersolitaire/deck/Deck.java" />
         <option value="$PROJECT_DIR$/src/main/java/sk/tuke/gamestudio/spidersolitaire/deck/Foundations.java" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/src/main/java/Main.java" />
+        <option value="$PROJECT_DIR$/src/main/java/sk/tuke/gamestudio/spidersolitaire/deck/ConsoleUI.java" />
+        <option value="$PROJECT_DIR$/src/main/java/sk/tuke/gamestudio/spidersolitaire/features/History.java" />
+        <option value="$PROJECT_DIR$/src/main/java/sk/tuke/gamestudio/spidersolitaire/deck/Deck.java" />
       </list>
     </option>
   </component>
@@ -189,6 +221,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -231,14 +264,22 @@
               <item name="spidersolitaire" type="462c0819:PsiDirectoryNode" />
               <item name="deck" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Spider-solitaire" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Spider-solitaire" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="spidersolitaire" type="462c0819:PsiDirectoryNode" />
+              <item name="features" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="Scratches" />
-      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -398,9 +439,9 @@
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="Application.Main" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.DeckTest" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.DeckTest.testIfGameIsLost" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.SpiderSolitaireTestSuite" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.SpiderSolitaireTestSuite" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.DeckTest" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.DeckTest.testIfGameIsLost" />
         <item index="4" class="java.lang.String" itemvalue="JUnit.CommentServiceJDBCTest" />
       </list>
     </recent_temporary>
@@ -456,7 +497,10 @@
       <workItem from="1521375394916" duration="164000" />
       <workItem from="1521375587542" duration="1257000" />
       <workItem from="1521469005566" duration="899000" />
-      <workItem from="1521469956312" duration="4696000" />
+      <workItem from="1521469956312" duration="6277000" />
+      <workItem from="1521553941719" duration="3754000" />
+      <workItem from="1521632777195" duration="14379000" />
+      <workItem from="1521666334310" duration="9623000" />
     </task>
     <task id="LOCAL-00001" summary="test commit from IDEA">
       <created>1521287787327</created>
@@ -486,19 +530,17 @@
       <option name="project" value="LOCAL" />
       <updated>1521471774629</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Readme completed">
+      <created>1521478387910</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1521478387910</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="DeckTest - 2018.03.17 at 20h 48m 08s.xml">
-      <configuration name="DeckTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="DeckTest - 2018.03.17 at 20h 48m 11s.xml">
-      <configuration name="DeckTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="DeckTest - 2018.03.17 at 20h 53m 32s.xml">
-      <configuration name="DeckTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="DeckTest - 2018.03.17 at 20h 54m 07s.xml">
       <configuration name="DeckTest" configurationId="JUnit" />
     </history-entry>
@@ -520,9 +562,18 @@
     <history-entry file="DeckTest - 2018.03.17 at 21h 22m 10s.xml">
       <configuration name="DeckTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="SpiderSolitaireTestSuite - 2018.03.21 at 14h 34m 46s.xml">
+      <configuration name="SpiderSolitaireTestSuite" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SpiderSolitaireTestSuite - 2018.03.21 at 14h 37m 37s.xml">
+      <configuration name="SpiderSolitaireTestSuite" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SpiderSolitaireTestSuite - 2018.03.21 at 14h 37m 46s.xml">
+      <configuration name="SpiderSolitaireTestSuite" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="242922000" />
+    <option name="totallyTimeSpent" value="272259000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -544,23 +595,23 @@
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32951945" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32814178" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32814178" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.784897" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.77116704" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.882151" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32837528" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23200859" sideWeight="0.5091533" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21482277" sideWeight="0.4908467" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32975295" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2244898" sideWeight="0.4908467" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32975295" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3272311" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24973147" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.72883296" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="PlantUML" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.32975295" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.41418764" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="PlantUML" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.32975295" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Hibernate Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.32951945" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -610,19 +661,19 @@
     <MESSAGE value="pojdeme s tationkou behat :D" />
     <MESSAGE value="Formalne jazyky cviko" />
     <MESSAGE value="GUI improved" />
-    <option name="LAST_COMMIT_MESSAGE" value="GUI improved" />
+    <MESSAGE value="Readme completed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Readme completed" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="59" />
+      <option name="time" value="60" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/sk/spacecode/spidersolitare/card/Ranks.java" />
     <entry file="file://$PROJECT_DIR$/src/sk/spacecode/spidersolitare/card/Runs.java" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/src.zip!/java/util/ArrayList.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/sk/spacecode/spidersolitare/PersistenceExecute.java" />
@@ -649,20 +700,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="42">
           <caret line="2" column="44" lean-forward="false" selection-start-line="2" selection-start-column="44" selection-end-line="2" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sk/tuke/gamestudio/spidersolitaire/entities/Rating.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="5" column="24" lean-forward="false" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sk/tuke/gamestudio/spidersolitaire/deck/Stock.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" column="4" lean-forward="false" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
         </state>
       </provider>
     </entry>
@@ -694,13 +731,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sk/tuke/gamestudio/spidersolitaire/entities/Score.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="5" column="3" lean-forward="true" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/sk/tuke/gamestudio/spidersolitaire/services/ScoreException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -722,38 +752,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="4" column="42" lean-forward="true" selection-start-line="4" selection-start-column="42" selection-end-line="4" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/test/ScoreServiceJDBCTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="12" column="31" lean-forward="true" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/test/ScoreServiceTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="630">
           <caret line="37" column="1" lean-forward="true" selection-start-line="37" selection-start-column="1" selection-end-line="37" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/test/RatingServiceTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="424">
-          <caret line="32" column="89" lean-forward="false" selection-start-line="32" selection-start-column="89" selection-end-line="32" selection-end-column="89" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sk/tuke/gamestudio/spidersolitaire/entities/Comment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="970">
-          <caret line="60" column="16" lean-forward="false" selection-start-line="60" selection-start-column="16" selection-end-line="60" selection-end-column="16" />
         </state>
       </provider>
     </entry>
@@ -764,24 +766,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/test/SpiderSolitaireTestSuite.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="6" column="35" lean-forward="true" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/test/RatingServiceJDBCTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="478">
           <caret line="29" column="5" lean-forward="true" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sk/tuke/gamestudio/spidersolitaire/deck/Tableau.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="25" column="11" lean-forward="false" selection-start-line="25" selection-start-column="11" selection-end-line="25" selection-end-column="11" />
         </state>
       </provider>
     </entry>
@@ -821,27 +809,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/test/DeckTest.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/sk/tuke/gamestudio/spidersolitaire/services/CommentServiceJDBC.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
-          <caret line="23" column="119" lean-forward="false" selection-start-line="23" selection-start-column="119" selection-end-line="23" selection-end-column="119" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sk/tuke/gamestudio/spidersolitaire/services/RatingServiceJDBC.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="23" column="119" lean-forward="false" selection-start-line="23" selection-start-column="119" selection-end-line="23" selection-end-column="119" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sk/tuke/gamestudio/spidersolitaire/services/ScoreServiceJDBC.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="22" column="119" lean-forward="false" selection-start-line="22" selection-start-column="119" selection-end-line="22" selection-end-column="119" />
-        </state>
-      </provider>
-    </entry>
     <entry file="uml://JAVA/sk.tuke.gamestudio.spidersolitaire.card.Pack">
       <provider selected="true" editor-type-id="UmlEditorProvider">
         <state>
@@ -1002,10 +969,55 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sk/tuke/gamestudio/spidersolitaire/card/Pack.java">
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="666">
+            <caret line="53" column="42" lean-forward="true" selection-start-line="53" selection-start-column="42" selection-end-line="53" selection-end-column="42" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/sk/tuke/gamestudio/spidersolitaire/services/CommentServiceJDBC.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="10" column="17" lean-forward="true" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+        <state relative-caret-position="-475">
+          <caret line="23" column="119" lean-forward="false" selection-start-line="23" selection-start-column="119" selection-end-line="23" selection-end-column="119" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/sk/tuke/gamestudio/spidersolitaire/services/RatingServiceJDBC.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-109">
+          <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/test/RatingServiceTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="19" column="21" lean-forward="true" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/test/ScoreServiceJDBCTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="415">
+          <caret line="28" column="16" lean-forward="false" selection-start-line="28" selection-start-column="16" selection-end-line="28" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/test/SpiderSolitaireTestSuite.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="6" column="35" lean-forward="true" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/sk/tuke/gamestudio/spidersolitaire/services/ScoreServiceJDBC.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="22" column="119" lean-forward="false" selection-start-line="22" selection-start-column="119" selection-end-line="22" selection-end-column="119" />
         </state>
       </provider>
     </entry>
@@ -1016,10 +1028,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sk/tuke/gamestudio/spidersolitaire/features/History.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/sk/tuke/gamestudio/spidersolitaire/card/Pack.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="772">
-          <caret line="75" column="97" lean-forward="false" selection-start-line="75" selection-start-column="97" selection-end-line="75" selection-end-column="97" />
+        <state relative-caret-position="210">
+          <caret line="10" column="17" lean-forward="true" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/sk/tuke/gamestudio/spidersolitaire/deck/Tableau.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-363">
+          <caret line="25" column="11" lean-forward="false" selection-start-line="25" selection-start-column="11" selection-end-line="25" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/sk/tuke/gamestudio/spidersolitaire/deck/Stock.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1028,39 +1054,93 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="231">
           <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/sk/tuke/gamestudio/spidersolitaire/entities/Comment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1008">
+          <caret line="60" column="16" lean-forward="false" selection-start-line="60" selection-start-column="16" selection-end-line="60" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/sk/tuke/gamestudio/spidersolitaire/entities/Rating.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="5" column="24" lean-forward="false" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/sk/tuke/gamestudio/spidersolitaire/entities/Score.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="5" column="3" lean-forward="true" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding>
+            <element signature="e#123#124#0" expanded="false" />
+            <element signature="e#176#177#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/sk/tuke/gamestudio/spidersolitaire/deck/ConsoleUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="945">
+          <caret line="45" column="17" lean-forward="false" selection-start-line="45" selection-start-column="17" selection-end-line="45" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/sk/tuke/gamestudio/spidersolitaire/features/History.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="301">
+          <caret line="51" column="21" lean-forward="false" selection-start-line="51" selection-start-column="21" selection-end-line="51" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/sk/tuke/gamestudio/spidersolitaire/deck/Deck.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6247">
-          <caret line="358" column="117" lean-forward="false" selection-start-line="358" selection-start-column="117" selection-end-line="358" selection-end-column="117" />
+        <state relative-caret-position="400">
+          <caret line="77" column="9" lean-forward="false" selection-start-line="77" selection-start-column="9" selection-end-line="77" selection-end-column="9" />
           <folding>
-            <element signature="e#15620#15621#0" expanded="true" />
-            <element signature="e#15654#15655#0" expanded="true" />
-            <element signature="e#15705#15706#0" expanded="true" />
-            <element signature="e#15751#15752#0" expanded="true" />
-            <element signature="e#15780#15781#0" expanded="true" />
-            <element signature="e#15808#15809#0" expanded="true" />
-            <element signature="e#15847#15848#0" expanded="true" />
-            <element signature="e#15881#15882#0" expanded="true" />
-            <element signature="e#15920#15921#0" expanded="true" />
-            <element signature="e#15958#15959#0" expanded="true" />
-            <element signature="e#16017#16018#0" expanded="true" />
-            <element signature="e#16071#16072#0" expanded="true" />
+            <element signature="e#11801#11802#0" expanded="true" />
+            <element signature="e#11835#11836#0" expanded="true" />
+            <element signature="e#12037#12038#0" expanded="true" />
+            <element signature="e#12065#12066#0" expanded="true" />
+            <element signature="e#12104#12105#0" expanded="true" />
+            <element signature="e#12138#12139#0" expanded="true" />
+            <element signature="e#12177#12178#0" expanded="true" />
+            <element signature="e#12215#12216#0" expanded="true" />
+            <element signature="e#12274#12275#0" expanded="true" />
+            <element signature="e#12328#12329#0" expanded="true" />
+            <element signature="e#12369#12370#0" expanded="true" />
+            <element signature="e#12409#12410#0" expanded="true" />
+            <element signature="e#12472#12473#0" expanded="true" />
+            <element signature="e#12530#12531#0" expanded="true" />
+            <element signature="e#12573#12574#0" expanded="true" />
+            <element signature="e#12607#12608#0" expanded="true" />
+            <element signature="e#12642#12643#0" expanded="true" />
+            <element signature="e#12672#12673#0" expanded="true" />
+            <element signature="e#12707#12708#0" expanded="true" />
+            <element signature="e#12737#12738#0" expanded="true" />
+            <element signature="e#12780#12781#0" expanded="true" />
+            <element signature="e#12822#12823#0" expanded="true" />
+            <element signature="e#12889#12890#0" expanded="true" />
+            <element signature="e#12951#12952#0" expanded="true" />
+            <element signature="e#12984#12985#0" expanded="true" />
+            <element signature="e#13016#13017#0" expanded="true" />
+            <element signature="e#13064#13065#0" expanded="true" />
+            <element signature="e#13106#13107#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="666">
-            <caret line="53" column="42" lean-forward="true" selection-start-line="53" selection-start-column="42" selection-end-line="53" selection-end-column="42" />
-            <folding />
-          </first_editor>
-          <second_editor />
         </state>
       </provider>
     </entry>

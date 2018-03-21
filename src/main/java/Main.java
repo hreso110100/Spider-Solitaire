@@ -1,8 +1,8 @@
-import sk.tuke.gamestudio.spidersolitaire.deck.Deck;
+import sk.tuke.gamestudio.spidersolitaire.deck.ConsoleUI;
 
 public class Main {
 
     public static void main(String[] args) {
-        Deck deck = new Deck();
+        ConsoleUI consoleUI = new ConsoleUI();
     }
 }

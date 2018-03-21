@@ -27,15 +27,15 @@ public class Deck {
     private int inputDestinationRow;
     private int foundationIndex;
     private int foundationsFilled;
+    private int gameState;
 
-    public Deck() {
+    Deck() {
         foundations = new Foundations();
         stock = new Stock();
         tableau = new Tableau();
         pack = new Pack();
         history = new History();
         shuffleAndServeCards();
-        game();
     }
 
     /**
@@ -48,61 +48,6 @@ public class Deck {
         Collections.shuffle(Arrays.asList(cardArray));
         tableau.fillTableau(cardArray);
         stock.fillStock(cardArray);
-        drawDeck();
-    }
-
-    /**
-     * This method represents simple console commands to play game
-     */
-
-    private void game() {
-        while (true) {
-            System.out.println("Enter your command");
-            Scanner scanner = new Scanner(System.in);
-            String input = scanner.nextLine();
-
-            switch (input) {
-                case "move": {
-                    try {
-                        System.out.println("ENTER SOURCE ROW");
-                        int inputSourceRow = scanner.nextInt();
-                        System.out.println("ENTER SOURCE ROW INDEX");
-                        int inputSourceRowIndex = scanner.nextInt();
-                        System.out.println("ENTER DESTINATION ROW");
-                        inputDestinationRow = scanner.nextInt();
-
-                        moveCards(inputSourceRow, inputSourceRowIndex, inputDestinationRow);
-                        break;
-                    } catch (InputMismatchException e) {
-                        System.out.println("Wrong input, try again");
-                        break;
-                    }
-                }
-                case "revert": {
-                    history.returnToPreviousStep(tableau, this, foundations);
-                    drawDeck();
-                    break;
-                }
-                case "restart":
-                    Deck deck = new Deck();
-                    break;
-                case "take":
-                    takeCardsFromStock(tableau.getColumns());
-                    break;
-                case "exit": {
-
-                    // TODO vymazat volania servisov po odovzdavke
-
-                    callScoreService();
-                    callCommentService();
-                    callRatingService();
-                    System.exit(0);
-                    break;
-                }
-                default:
-                    System.out.println("Wrong command ! Try again");
-            }
-        }
     }
 
     /**
@@ -119,6 +64,7 @@ public class Deck {
     private void moveCardsCore(List<Card> sourceMovedList, List<Card> sourceList, List<Card> destinationList, int source, int sourceRowIndex, int destination) {
 
         int firstItemAtColumn = sourceList.get(sourceRowIndex).getRank();
+        int isLast = 0;
         sourceMovedList.add(sourceList.get(sourceRowIndex));
 
         for (int i = sourceRowIndex + 1; i < sourceList.size(); i++) {
@@ -130,8 +76,11 @@ public class Deck {
                 System.out.println("CANNOT MOVE CARDS !!!");
             }
         }
+        if (sourceRowIndex > 0 && !tableau.getColumns()[source].get(sourceRowIndex - 1).isFlipped()) {
+            isLast = 1;
+        }
         destinationList.addAll(sourceMovedList);
-        history.addToHistory(source, sourceMovedList.size(), destination, 1);
+        history.addToHistory(source, sourceMovedList.size(), destination, 1, getStepCounter(), isLast);
         sourceList.removeAll(sourceMovedList);
         sourceMovedList.clear();
     }
@@ -144,7 +93,7 @@ public class Deck {
      * @param destinationRow destination row where cards are moved
      */
 
-    private void moveCards(int sourceRow, int sourceRowIndex, int destinationRow) {
+    public void moveCards(int sourceRow, int sourceRowIndex, int destinationRow) {
 
         if (sourceRow < tableau.getColumns().length && destinationRow < tableau.getColumns().length) {
             List<Card> sourceList = tableau.getColumns()[sourceRow];
@@ -165,7 +114,6 @@ public class Deck {
             System.out.println("SOURCE ROW OR DESTINATION ROW OUT OF INDEX !!!");
         }
         checkForFullRun();
-        drawDeck();
 
         if (checkIfGameIsLost()) {
             afterLost();
@@ -177,7 +125,7 @@ public class Deck {
      */
 
     private void afterLost() {
-        System.out.println("YOU LOST !");
+        setGameState(1);
         callScoreService();
         callCommentService();
         callRatingService();
@@ -218,11 +166,13 @@ public class Deck {
      */
 
     private void addRunToFoundations(List<Card> run, int sourceRow) {
+        int isLast = 0;
+
         if (run.size() == 13) {
-            countScore();
             checkIfGameIsWon(run);
             tableau.getColumns()[sourceRow].removeAll(run);
-            history.addToHistory(0, 0, inputDestinationRow, 3);
+            history.addToHistory(0, 0, inputDestinationRow, 3, getStepCounter(), isLast);
+            countScore();
             run.clear();
         } else {
             run.clear();
@@ -240,10 +190,11 @@ public class Deck {
         setFoundationIndex(getFoundationIndex() + 1);
         foundationsFilled++;
         if (foundationsFilled == 8) {
-            System.out.println("CONGRATULATIONS, YOU ARE WINNER !!!");
+            setGameState(2);
             callScoreService();
             callCommentService();
             callRatingService();
+            System.exit(0);
         }
     }
 
@@ -281,7 +232,7 @@ public class Deck {
      * This method call score service
      */
 
-    private void callScoreService() {
+    public void callScoreService() {
         Score score = new Score("david", getScore(), new Date());
         ScoreService scoreService = new ScoreServiceJDBC();
         scoreService.addScore(score);
@@ -296,7 +247,7 @@ public class Deck {
      * This method calls comment service
      */
 
-    private void callCommentService() {
+    public void callCommentService() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("ENTER YOUR COMMENT: ");
         String input = scanner.nextLine();
@@ -315,7 +266,7 @@ public class Deck {
      * This method calls rating service
      */
 
-    private void callRatingService() {
+    public void callRatingService() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("ENTER YOUR RATING");
         Integer input = scanner.nextInt();
@@ -336,72 +287,12 @@ public class Deck {
      */
 
     private void countScore() {
-        if (stepCounter < 20) {
+        if (stepCounter <= 20) {
             score += 100;
-        } else {
+        } else if (stepCounter < 100) {
             score += (100 - stepCounter);
         }
-    }
-
-    /**
-     * This method prints indexes of columns
-     */
-
-    private void drawIndexOnDeck() {
-        int size = 0;
-
-        for (int i = 0; i < tableau.getColumns().length; i++) {
-            if (size < tableau.getColumns()[i].size()) {
-                size = tableau.getColumns()[i].size();
-            }
-        }
-        System.out.println("SCORE " + score + " STEPS " + stepCounter);
-        System.out.println("FOUNDATIONS " + foundationsFilled + " STOCK " + (5 - removeItemFromArrayIndex / 10) + '\n');
-        System.out.print("COL      ");
-
-        for (int j = 0; j < size; j++) {
-            System.out.print(j + "  ");
-        }
-        System.out.println();
-    }
-
-    /**
-     * This method prints cards to tableau
-     */
-
-    private void drawDeck() {
-        drawIndexOnDeck();
-
-        for (int i = 0; i < tableau.getColumns().length; i++) {
-            System.out.print("ROW " + i + "   ");
-            for (int j = 0; j < tableau.getColumns()[i].size(); j++) {
-                if (j == tableau.getColumns()[i].size() - 1) {
-                    tableau.getColumns()[i].get(j).setFlipped(true);
-                }
-                if (tableau.getColumns()[i].get(j).isFlipped()) {
-                    switch (tableau.getColumns()[i].get(j).getRank()) {
-                        case 1:
-                            System.out.print(" A ");
-                            break;
-                        case 11:
-                            System.out.print(" J ");
-                            break;
-                        case 12:
-                            System.out.print(" Q ");
-                            break;
-                        case 13:
-                            System.out.print(" K ");
-                            break;
-                        default:
-                            System.out.print(" " + tableau.getColumns()[i].get(j).getRank() + " ");
-                            break;
-                    }
-                } else {
-                    System.out.print(" - ");
-                }
-            }
-            System.out.println();
-        }
+        setStepCounter(0);
     }
 
     /**
@@ -426,13 +317,13 @@ public class Deck {
      * @param columns represents array of columns in tableau
      */
 
-    private void takeCardsFromStock(List[] columns) {
+    public void takeCardsFromStock(List[] columns) {
 
         for (int i = 0; i < columns.length; i++) {
             if (checkLengthOfColumns(tableau.getColumns()) && removeItemFromArrayIndex <= 49) {
                 tableau.getColumns()[i].add(stock.getStock()[removeItemFromArrayIndex++]);
                 if (i == columns.length - 1) {
-                    history.addToHistory(0, 0, 0, 2);
+                    history.addToHistory(0, 0, 0, 2, getStepCounter(), 0);
                     stepCounter++;
                 }
             } else {
@@ -444,7 +335,6 @@ public class Deck {
             }
         }
         checkForFullRun();
-        drawDeck();
     }
 
     // getters and setters
@@ -455,6 +345,10 @@ public class Deck {
 
     public void setStepCounter(int stepCounter) {
         this.stepCounter = stepCounter;
+
+        if (stepCounter < 0) {
+            this.stepCounter = 0;
+        }
     }
 
     public int getScore() {
@@ -471,5 +365,41 @@ public class Deck {
 
     public void setFoundationIndex(int foundationIndex) {
         this.foundationIndex = foundationIndex;
+    }
+
+    public int getFoundationsFilled() {
+        return foundationsFilled;
+    }
+
+    public void setFoundationsFilled(int foundationsFilled) {
+        this.foundationsFilled = foundationsFilled;
+    }
+
+    public Foundations getFoundations() {
+        return foundations;
+    }
+
+    public Tableau getTableau() {
+        return tableau;
+    }
+
+    public History getHistory() {
+        return history;
+    }
+
+    public int getInputDestinationRow() {
+        return inputDestinationRow;
+    }
+
+    public void setInputDestinationRow(int inputDestinationRow) {
+        this.inputDestinationRow = inputDestinationRow;
+    }
+
+    public int getGameState() {
+        return gameState;
+    }
+
+    private void setGameState(int gameState) {
+        this.gameState = gameState;
     }
 }

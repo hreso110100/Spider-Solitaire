@@ -47,7 +47,9 @@ public class History {
                     for (int i = sourceIndex; i < tableau.getColumns()[source].size(); i++) {
                         cardToRevert.add(tableau.getColumns()[source].get(i));
                     }
-                    tableau.getColumns()[destination].get(tableau.getColumns()[destination].size() - 1).setFlipped(false);
+                    if (revertList.get(revertList.size() - 1)[5] == 1) {
+                        tableau.getColumns()[destination].get(tableau.getColumns()[destination].size() - 1).setFlipped(false);
+                    }
                     tableau.getColumns()[destination].addAll(cardToRevert);
                     tableau.getColumns()[source].removeAll(cardToRevert);
                     deck.setStepCounter(deck.getStepCounter() - 1);
@@ -71,17 +73,21 @@ public class History {
 
                 case 3: {
                     int destination = revertList.get(revertList.size() - 1)[2];
+                    int steps = revertList.get(revertList.size() - 1)[4];
 
                     deck.setFoundationIndex(deck.getFoundationIndex() - 1);
+                    deck.setFoundationsFilled(deck.getFoundationsFilled() - 1);
                     tableau.getColumns()[destination].addAll(foundations.getFoundationList()[deck.getFoundationIndex()]);
                     foundations.getFoundationList()[deck.getFoundationIndex()].clear();
                     revertList.remove(revertList.size() - 1);
+                    deck.setStepCounter(steps);
 
                     if (deck.getStepCounter() >= 20) {
-                        deck.setScore(deck.getScore() - (100 - deck.getStepCounter()));
+                        deck.setScore(deck.getScore() - (100 - steps));
                     } else {
                         deck.setScore(deck.getScore() - 100);
                     }
+
                     returnToPreviousStep(tableau, deck, foundations);
                     break;
                 }
@@ -100,13 +106,15 @@ public class History {
      * @param typeOfMove      type of move with cards
      */
 
-    public void addToHistory(int sourceRow, int sourceRowLength, int destinationRow, int typeOfMove) {
-        int[] step = new int[4];
+    public void addToHistory(int sourceRow, int sourceRowLength, int destinationRow, int typeOfMove, int stepCounter, int isLast) {
+        int[] step = new int[6];
 
         step[0] = sourceRow;
         step[1] = sourceRowLength;
         step[2] = destinationRow;
         step[3] = typeOfMove;
+        step[4] = stepCounter;
+        step[5] = isLast;
 
         revertList.add(step);
     }
