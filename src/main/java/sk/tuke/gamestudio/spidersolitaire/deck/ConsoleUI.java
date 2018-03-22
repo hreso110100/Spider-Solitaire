@@ -5,6 +5,10 @@ import java.util.Scanner;
 
 import static sk.tuke.gamestudio.spidersolitaire.deck.Deck.removeItemFromArrayIndex;
 
+/**
+ * This class represents simple console UI
+ */
+
 public class ConsoleUI {
 
     private Deck deck;

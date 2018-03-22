@@ -104,6 +104,8 @@ public class History {
      * @param sourceRowLength length of source row
      * @param destinationRow  row where user moved card or run
      * @param typeOfMove      type of move with cards
+     * @param stepCounter     number of steps
+     * @param isLast          check if selected card was last in column
      */
 
     public void addToHistory(int sourceRow, int sourceRowLength, int destinationRow, int typeOfMove, int stepCounter, int isLast) {
