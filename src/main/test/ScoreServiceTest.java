@@ -1,6 +1,6 @@
 import org.junit.Test;
-import sk.tuke.gamestudio.spidersolitaire.entities.Score;
-import sk.tuke.gamestudio.spidersolitaire.services.ScoreService;
+import sk.tuke.gamestudio.spidersolitaire.server.entity.Score;
+import sk.tuke.gamestudio.spidersolitaire.server.service.ScoreService;
 
 import java.util.Date;
 import java.util.List;

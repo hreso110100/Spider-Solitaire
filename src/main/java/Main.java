@@ -1,4 +1,4 @@
-import sk.tuke.gamestudio.spidersolitaire.deck.ConsoleUI;
+import sk.tuke.gamestudio.spidersolitaire.game.deck.ConsoleUI;
 
 public class Main {
 

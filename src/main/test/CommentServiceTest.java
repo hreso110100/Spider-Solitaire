@@ -1,6 +1,6 @@
 import org.junit.Test;
-import sk.tuke.gamestudio.spidersolitaire.entities.Comment;
-import sk.tuke.gamestudio.spidersolitaire.services.CommentService;
+import sk.tuke.gamestudio.spidersolitaire.server.entity.Comment;
+import sk.tuke.gamestudio.spidersolitaire.server.service.CommentService;
 
 import java.util.ArrayList;
 import java.util.Date;
