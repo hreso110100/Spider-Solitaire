@@ -1,6 +1,6 @@
 import org.junit.Before;
 import org.junit.Test;
-import sk.tuke.gamestudio.spidersolitaire.server.service.CommentServiceJDBC;
+import sk.tuke.gamestudio.server.service.CommentServiceJDBC;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

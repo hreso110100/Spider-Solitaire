@@ -1,6 +1,6 @@
 import org.junit.Before;
 import org.junit.Test;
-import sk.tuke.gamestudio.spidersolitaire.server.service.RatingServiceJDBC;
+import sk.tuke.gamestudio.server.service.RatingServiceJDBC;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
