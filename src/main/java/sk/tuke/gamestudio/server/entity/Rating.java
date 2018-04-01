@@ -7,6 +7,7 @@ import java.util.Date;
  * POJO class for rating
  */
 @Entity
+
 @NamedQueries({
         @NamedQuery(name = "Rating.getRatingByPlayer",
                 query = "SELECT rating FROM Rating rating WHERE rating.game=:game AND rating.player=:player"),
