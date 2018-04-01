@@ -1,10 +1,12 @@
 package sk.tuke.gamestudio.server.service;
 
 import com.sun.webkit.dom.RangeImpl;
+import org.springframework.jdbc.object.SqlQuery;
 import sk.tuke.gamestudio.server.entity.Rating;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.List;
@@ -18,7 +20,7 @@ public class RatingServiceJPA implements RatingService {
 
     @Override
     public void setRating(Rating rating) throws RatingException {
-        
+        entityManager.merge(rating);
     }
 
     @Override

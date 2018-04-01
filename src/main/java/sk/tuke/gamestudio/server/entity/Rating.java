@@ -15,8 +15,6 @@ import java.util.Date;
                 query = "SELECT rating FROM Rating rating WHERE rating.game=:game")})
 public class Rating {
     @Id
-    @GeneratedValue
-    private int id;
     private String player;
     private String game;
     private int rating;

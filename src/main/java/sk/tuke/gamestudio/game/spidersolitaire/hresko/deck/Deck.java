@@ -266,7 +266,7 @@ public class Deck {
         System.out.println("ENTER YOUR RATING");
         Integer input = scanner.nextInt();
 
-        Rating rating = new Rating("david", input, new Date());
+        Rating rating = new Rating("davidek", input, new Date());
         ratingService.setRating(rating);
 
         try {
