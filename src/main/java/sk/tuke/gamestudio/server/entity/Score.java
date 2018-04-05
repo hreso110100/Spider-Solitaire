@@ -1,9 +1,6 @@
 package sk.tuke.gamestudio.server.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.NamedQuery;
+import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
 
@@ -17,7 +14,7 @@ import java.util.Date;
 public class Score implements Comparable<Score>, Serializable {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String game;
     private String player;
