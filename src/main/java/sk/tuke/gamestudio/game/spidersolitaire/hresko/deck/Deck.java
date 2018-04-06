@@ -266,11 +266,10 @@ public class Deck {
         System.out.println("ENTER YOUR RATING");
         Integer input = scanner.nextInt();
 
-        Rating rating = new Rating("davidek", input, new Date());
+        Rating rating = new Rating("david", input, new Date());
         ratingService.setRating(rating);
 
         try {
-            System.out.println("RATING OF PLAYER DAVID " + ratingService.getRating("spider-solitaire", "davidek"));
             System.out.println("AVERAGE RATING OF GAME IS " + ratingService.getAverageRating("spider-solitaire"));
         } catch (NullPointerException e) {
             System.out.println("ROW DOESN'T EXIST");

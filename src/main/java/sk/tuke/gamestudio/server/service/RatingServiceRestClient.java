@@ -1,12 +1,15 @@
 package sk.tuke.gamestudio.server.service;
 
 import sk.tuke.gamestudio.server.entity.Rating;
+import sk.tuke.gamestudio.server.entity.Score;
 
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.Entity;
+import javax.ws.rs.core.GenericType;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import java.util.List;
 
 public class RatingServiceRestClient implements RatingService {
 
@@ -31,7 +34,8 @@ public class RatingServiceRestClient implements RatingService {
             return client.target(URL)
                     .path("/" + game)
                     .request(MediaType.APPLICATION_JSON)
-                    .get(Rating.class).getRating();
+                    .get(new GenericType<Integer>() {
+                    });
         } catch (Exception e) {
             throw new RatingException("Error loading average rating", e);
         }
@@ -45,7 +49,8 @@ public class RatingServiceRestClient implements RatingService {
                     .path("/" + game)
                     .path("/" + player)
                     .request(MediaType.APPLICATION_JSON)
-                    .get(Rating.class).getRating();
+                    .get(new GenericType<Integer>() {
+                    });
         } catch (Exception e) {
             throw new RatingException("Error loading rating", e);
         }

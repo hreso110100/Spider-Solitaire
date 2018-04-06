@@ -16,8 +16,6 @@ import java.util.Date;
 public class Rating {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
     private String player;
     private String game;
     private int rating;
@@ -79,13 +77,5 @@ public class Rating {
 
     public void setRatedon(Date ratedon) {
         this.ratedon = ratedon;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 }
