@@ -14,7 +14,10 @@ import java.util.Date;
         @NamedQuery(name = "Rating.getAverageRating",
                 query = "SELECT rating FROM Rating rating WHERE rating.game=:game")})
 public class Rating {
+
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private int id;
     private String player;
     private String game;
     private int rating;
@@ -76,5 +79,13 @@ public class Rating {
 
     public void setRatedon(Date ratedon) {
         this.ratedon = ratedon;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }
