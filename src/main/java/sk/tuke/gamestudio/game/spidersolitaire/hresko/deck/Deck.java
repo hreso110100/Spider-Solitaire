@@ -45,6 +45,7 @@ public class Deck {
         tableau = new Tableau();
         pack = new Pack();
         history = new History();
+        removeItemFromArrayIndex = 0;
         shuffleAndServeCards();
     }
 
