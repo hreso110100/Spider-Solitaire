@@ -17,14 +17,19 @@ public class SpiderSolitaireHreskoController {
     //http://localhost:8080/spider-solitaire-hresko
 
     @RequestMapping("/spider-solitaire-hresko")
-    public String spiderSolitaire(@RequestParam(value = "command", required = false) String command, Model model) {
+    public String spiderSolitaire(@RequestParam(value = "command", required = false) String command,
+                                  @RequestParam(value = "sourceRow", required = false) String sourceRow,
+                                  @RequestParam(value = "sourceRowIndex", required = false) String sourceRowIndex,
+                                  @RequestParam(value = "destinationRow", required = false) String destinationRow,
+                                  Model model) {
 
-        webUI.processCommand(command);
+        webUI.processCommand(command, sourceRow, sourceRowIndex, destinationRow);
 
         model.addAttribute("score", webUI.getScore());
         model.addAttribute("steps", webUI.getSteps());
         model.addAttribute("renderStock", webUI.renderStock());
         model.addAttribute("renderFoundation", webUI.renderFoundations());
+        model.addAttribute("renderDeck", webUI.renderDeck());
 
         return "spider-solitaire-hresko";
     }
