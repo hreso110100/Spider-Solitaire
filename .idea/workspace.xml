@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="36fc79a6-226d-47da-86f7-58ecb17b992b" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sk/tuke/gamestudio/game/spidersolitaire/hresko/webui/WebUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sk/tuke/gamestudio/game/spidersolitaire/hresko/webui/WebUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sk/tuke/gamestudio/server/controller/SpiderSolitaireHreskoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sk/tuke/gamestudio/server/controller/SpiderSolitaireHreskoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/spider-solitaire-hresko.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/spider-solitaire-hresko.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/spider-solitaire/hresko/Thumbs.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/images/spider-solitaire/hresko/Thumbs.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/spider-solitaire-hresko.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/spider-solitaire-hresko.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sk/tuke/gamestudio/game/spidersolitaire/hresko/webui/WebUI.class" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -55,8 +53,8 @@
       <file leaf-file-name="WebUI.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/sk/tuke/gamestudio/game/spidersolitaire/hresko/webui/WebUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="102" column="73" selection-start-line="102" selection-start-column="73" selection-end-line="102" selection-end-column="73" />
+            <state relative-caret-position="292">
+              <caret line="144" column="22" selection-start-line="144" selection-start-column="22" selection-end-line="144" selection-end-column="22" />
               <folding>
                 <element signature="e#7329#7330#0" expanded="true" />
                 <element signature="e#7356#7357#0" expanded="true" />
@@ -77,34 +75,8 @@
       <file leaf-file-name="SpiderSolitaireHreskoController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/sk/tuke/gamestudio/server/controller/SpiderSolitaireHreskoController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="34" column="5" lean-forward="true" selection-start-line="34" selection-start-column="5" selection-end-line="34" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Tableau.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/sk/tuke/gamestudio/game/spidersolitaire/hresko/deck/Tableau.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="77" selection-start-line="77" selection-end-line="77" />
-              <folding>
-                <element signature="e#2348#2349#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Deck.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/sk/tuke/gamestudio/game/spidersolitaire/hresko/deck/Deck.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="319">
-              <caret line="423" selection-start-line="423" selection-end-line="423" />
-              <folding>
-                <element signature="e#13986#13987#0" expanded="true" />
-                <element signature="e#14024#14025#0" expanded="true" />
-                <element signature="e#14481#14482#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="391">
+              <caret line="29" column="48" selection-start-line="29" selection-start-column="48" selection-end-line="29" selection-end-column="48" />
             </state>
           </provider>
         </entry>
@@ -571,7 +543,7 @@
       <workItem from="1523647384021" duration="102000" />
       <workItem from="1523697264816" duration="18052000" />
       <workItem from="1523784826720" duration="1022000" />
-      <workItem from="1523788015779" duration="51099000" />
+      <workItem from="1523788015779" duration="56354000" />
     </task>
     <task id="LOCAL-00001" summary="test commit from IDEA">
       <created>1521287787327</created>
@@ -658,7 +630,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="389542000" />
+    <option name="totallyTimeSpent" value="394797000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -670,7 +642,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
@@ -683,7 +655,7 @@
       <window_info id="Structure" order="1" side_tool="true" weight="0.24973147" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="4" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4555874" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.37106016" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32951945" />
       <window_info anchor="bottom" id="Messages" order="13" weight="0.28223497" />
       <window_info anchor="right" id="Palette&#9;" order="8" />
@@ -691,7 +663,7 @@
       <window_info anchor="bottom" id="Java Enterprise" order="16" weight="0.32951945" />
       <window_info anchor="right" id="Capture Analysis" order="6" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.7836676" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49932885" weight="0.53151864" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49932885" weight="0.79512894" />
       <window_info anchor="bottom" id="Spring" order="17" />
       <window_info anchor="bottom" id="Terminal" order="12" weight="0.32808024" />
       <window_info id="Persistence" order="6" sideWeight="0.5157593" side_tool="true" weight="0.24362417" />
@@ -762,41 +734,10 @@
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="77" />
+      <option name="time" value="83" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="611">
-            <caret line="53" column="42" lean-forward="true" selection-start-line="53" selection-start-column="42" selection-end-line="53" selection-end-column="42" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sk/tuke/gamestudio/server/service/ScoreServiceJDBC.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="22" column="119" selection-start-line="22" selection-start-column="119" selection-end-line="22" selection-end-column="119" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sk/tuke/gamestudio/server/service/ScoreService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-context/5.0.4.RELEASE/spring-context-5.0.4.RELEASE-sources.jar!/org/springframework/context/annotation/Configuration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="405" column="18" selection-start-line="405" selection-start-column="18" selection-end-line="405" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-autoconfigure/2.0.0.RELEASE/spring-boot-autoconfigure-2.0.0.RELEASE-sources.jar!/org/springframework/boot/autoconfigure/EnableAutoConfiguration.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
@@ -1056,10 +997,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/4.3.6.RELEASE/spring-webmvc-4.3.6.RELEASE.jar!/org/springframework/web/servlet/mvc/method/annotation/RequestMappingHandlerAdapter.class">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-core/8.5.11/tomcat-embed-core-8.5.11.jar!/javax/servlet/http/HttpServlet.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="117">
-          <caret line="525" selection-start-line="525" selection-end-line="525" />
+          <caret line="223" selection-start-line="223" selection-end-line="223" />
         </state>
       </provider>
     </entry>
@@ -1070,38 +1011,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/4.3.6.RELEASE/spring-web-4.3.6.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="99">
-          <caret line="54" selection-start-line="54" selection-end-line="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-core/8.5.11/tomcat-embed-core-8.5.11.jar!/javax/servlet/http/HttpServlet.class">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/4.3.6.RELEASE/spring-webmvc-4.3.6.RELEASE.jar!/org/springframework/web/servlet/mvc/method/AbstractHandlerMethodAdapter.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="117">
-          <caret line="223" selection-start-line="223" selection-end-line="223" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/4.3.6.RELEASE/spring-webmvc-4.3.6.RELEASE.jar!/org/springframework/web/servlet/DispatcherServlet.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="117">
-          <caret line="450" selection-start-line="450" selection-end-line="450" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/4.3.6.RELEASE/spring-webmvc-4.3.6.RELEASE.jar!/org/springframework/web/servlet/FrameworkServlet.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="99">
-          <caret line="467" selection-start-line="467" selection-end-line="467" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sk/tuke/gamestudio/server/controller/SpiderSolitaireHreskoController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="34" column="5" lean-forward="true" selection-start-line="34" selection-start-column="5" selection-end-line="34" selection-end-column="5" />
+          <caret line="37" selection-start-line="37" selection-end-line="37" />
         </state>
       </provider>
     </entry>
@@ -1112,10 +1025,66 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/sk/tuke/gamestudio/server/controller/SpiderSolitaireHreskoController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="29" column="48" selection-start-line="29" selection-start-column="48" selection-end-line="29" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/4.3.6.RELEASE/spring-web-4.3.6.RELEASE.jar!/org/springframework/web/filter/RequestContextFilter.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="117">
+          <caret line="41" selection-start-line="41" selection-end-line="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/4.3.6.RELEASE/spring-web-4.3.6.RELEASE.jar!/org/springframework/web/filter/OncePerRequestFilter.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="117">
+          <caret line="34" selection-start-line="34" selection-end-line="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-core/8.5.11/tomcat-embed-core-8.5.11.jar!/org/apache/catalina/core/ApplicationFilterChain.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="99">
+          <caret line="94" selection-start-line="94" selection-end-line="94" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/4.3.6.RELEASE/spring-webmvc-4.3.6.RELEASE.jar!/org/springframework/web/servlet/FrameworkServlet.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="99">
+          <caret line="475" selection-start-line="475" selection-end-line="475" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/4.3.6.RELEASE/spring-webmvc-4.3.6.RELEASE.jar!/org/springframework/web/servlet/DispatcherServlet.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="99">
+          <caret line="404" selection-start-line="404" selection-end-line="404" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/4.3.6.RELEASE/spring-webmvc-4.3.6.RELEASE.jar!/org/springframework/web/servlet/mvc/method/annotation/RequestMappingHandlerAdapter.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="99">
+          <caret line="532" selection-start-line="532" selection-end-line="532" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/4.3.6.RELEASE/spring-web-4.3.6.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="99">
+          <caret line="123" selection-start-line="123" selection-end-line="123" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/sk/tuke/gamestudio/game/spidersolitaire/hresko/webui/WebUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="102" column="73" selection-start-line="102" selection-start-column="73" selection-end-line="102" selection-end-column="73" />
+        <state relative-caret-position="292">
+          <caret line="144" column="22" selection-start-line="144" selection-start-column="22" selection-end-line="144" selection-end-column="22" />
           <folding>
             <element signature="e#7329#7330#0" expanded="true" />
             <element signature="e#7356#7357#0" expanded="true" />

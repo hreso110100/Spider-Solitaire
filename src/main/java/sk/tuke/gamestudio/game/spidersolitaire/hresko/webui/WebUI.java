@@ -5,6 +5,7 @@ import sk.tuke.gamestudio.game.spidersolitaire.hresko.deck.Deck;
 public class WebUI {
 
     private Deck deck;
+    int parsedSourceRow;
 
     public WebUI() {
         deck = new Deck();
@@ -24,22 +25,19 @@ public class WebUI {
 
                 case "take": {
                     deck.takeCardsFromStock(deck.getTableau().getColumns());
-                    renderDeck();
                     break;
                 }
                 case "move": {
 
-                    int parsedSourceRow = Integer.parseInt(sourceRow);
+                    parsedSourceRow = Integer.parseInt(sourceRow);
                     int parsedSourceRowIndex = Integer.parseInt(sourceRowIndex);
                     int parsedDestinationRow = Integer.parseInt(destinationRow);
 
                     deck.moveCards(parsedSourceRow, parsedSourceRowIndex, parsedDestinationRow);
-                    renderDeck();
                     break;
                 }
                 case "restart": {
                     deck = new Deck();
-                    renderDeck();
                     break;
                 }
             }
@@ -94,12 +92,15 @@ public class WebUI {
         }
 
         if (deck.getGameState() == 0) {
+
             for (int i = 0; i < size; i++) {
+
                 deckBuilder.append("<div class='tableau-row row' style = \"z-index : ").append(i + 1).append("; padding-top :").append(i * 30).append("px;\">");
                 for (int j = 0; j < 10; j++) {
-                    if (deck.getTableau().getColumns()[j].size() < size && deck.getTableau().getColumns()[j].size() == i) {
+
+                    if (deck.getTableau().getColumns()[j].size() == i) {
                         deckBuilder.append("<img src='" + "/images/spider-solitaire/hresko/empty.png" + "' width = 130px height=150px>");
-                    } else if (deck.getTableau().getColumns()[j].get(i).isFlipped()) {
+                    } else if (deck.getTableau().getColumns()[j].size() > i && deck.getTableau().getColumns()[j].get(i).isFlipped()) {
                         switch (deck.getTableau().getColumns()[j].get(i).getRank()) {
                             case 1:
                                 deckBuilder.append("<img src='" + "/images/spider-solitaire/hresko/AS.png" + "' width = 130px height=150px>");
@@ -141,7 +142,7 @@ public class WebUI {
                                 deckBuilder.append("<img src='" + "/images/spider-solitaire/hresko/KS.png" + "' width = 130px height=150px>");
                                 break;
                         }
-                    } else {
+                    } else if (deck.getTableau().getColumns()[j].size() > i) {
                         deckBuilder.append("<img src='" + "/images/spider-solitaire/hresko/back.png" + "' width = 130px height=150px>");
                     }
                 }
