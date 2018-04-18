@@ -218,18 +218,24 @@ public class Deck {
     private boolean checkIfGameIsLost() {
         if (removeItemFromArrayIndex == 50) {
             for (int i = 0; i < tableau.getColumns().length; i++) {
-                Card startOfRun = tableau.getColumns()[i].get(tableau.getColumns()[i].size() - 1);
-                for (int j = tableau.getColumns()[i].size() - 2; j > 0; j--) {
-                    if (tableau.getColumns()[i].get(j).getRank() - startOfRun.getRank() == 1 && tableau.getColumns()[i].get(j).isFlipped()) {
-                        startOfRun = tableau.getColumns()[i].get(j);
+                if (tableau.getColumns()[i].size() > 0) {
+                    Card startOfRun = tableau.getColumns()[i].get(tableau.getColumns()[i].size() - 1);
+                    for (int j = tableau.getColumns()[i].size() - 2; j > 0; j--) {
+                        if (tableau.getColumns()[i].get(j).getRank() - startOfRun.getRank() == 1 && tableau.getColumns()[i].get(j).isFlipped()) {
+                            startOfRun = tableau.getColumns()[i].get(j);
+                        }
                     }
-                }
 
-                for (int k = 0; k < tableau.getColumns().length; k++) {
-                    Card lastItemOfColumn = tableau.getColumns()[k].get(tableau.getColumns()[k].size() - 1);
+                    for (int k = 0; k < tableau.getColumns().length; k++) {
+                        Card lastItemOfColumn;
 
-                    if (i != k && startOfRun.getRank() - lastItemOfColumn.getRank() == -1) {
-                        return false;
+                        if (tableau.getColumns()[k].size() > 1) {
+                            lastItemOfColumn = tableau.getColumns()[k].get(tableau.getColumns()[k].size() - 1);
+
+                            if (i != k && startOfRun.getRank() - lastItemOfColumn.getRank() == -1) {
+                                return false;
+                            }
+                        }
                     }
                 }
             }

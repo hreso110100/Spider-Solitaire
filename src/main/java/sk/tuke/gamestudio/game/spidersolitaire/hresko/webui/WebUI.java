@@ -5,7 +5,6 @@ import sk.tuke.gamestudio.game.spidersolitaire.hresko.deck.Deck;
 public class WebUI {
 
     private Deck deck;
-    int parsedSourceRow;
 
     public WebUI() {
         deck = new Deck();
@@ -27,9 +26,13 @@ public class WebUI {
                     deck.takeCardsFromStock(deck.getTableau().getColumns());
                     break;
                 }
+                case "revert": {
+                    deck.getHistory().returnToPreviousStep(deck.getTableau(), deck, deck.getFoundations());
+                    break;
+                }
                 case "move": {
 
-                    parsedSourceRow = Integer.parseInt(sourceRow);
+                    int parsedSourceRow = Integer.parseInt(sourceRow);
                     int parsedSourceRowIndex = Integer.parseInt(sourceRowIndex);
                     int parsedDestinationRow = Integer.parseInt(destinationRow);
 
@@ -42,17 +45,18 @@ public class WebUI {
                 }
             }
         }
+
     }
 
     public String renderStock() {
         StringBuilder stockBuilder = new StringBuilder();
 
         if (Deck.removeItemFromArrayIndex <= 49) {
-            stockBuilder.append("<a id = stock-a href='" + "?command=take" + "'>\n");
+            stockBuilder.append("<a href='" + "?command=take' class = stock-a>");
             stockBuilder.append("<img src='" + "/images/spider-solitaire/hresko/back.png" + "' width = 110px height=150px>");
             stockBuilder.append("</a>");
         } else {
-            stockBuilder.append("<img src='" + "/images/spider-solitaire/hresko/empty_stock.png" + "' width = 110px height=150px>");
+            stockBuilder.append("<img class = stock-a src='" + "/images/spider-solitaire/hresko/empty_stock.png" + "' width = 110px height=150px>");
         }
 
         return stockBuilder.toString();
@@ -98,52 +102,56 @@ public class WebUI {
                 deckBuilder.append("<div class='tableau-row row' style = \"z-index : ").append(i + 1).append("; padding-top :").append(i * 30).append("px;\">");
                 for (int j = 0; j < 10; j++) {
 
-                    if (deck.getTableau().getColumns()[j].size() == i) {
-                        deckBuilder.append("<img src='" + "/images/spider-solitaire/hresko/empty.png" + "' width = 130px height=150px>");
-                    } else if (deck.getTableau().getColumns()[j].size() > i && deck.getTableau().getColumns()[j].get(i).isFlipped()) {
+                    if (i == 0 && deck.getTableau().getColumns()[j].size() == 0 ) {
+                        deckBuilder.append("<img id = ").append(j).append(i).append(" class = cards-items onclick='").append("replace(this.id);' ").append("src='").append("/images/spider-solitaire/hresko/foundation_spot.png").append("' width = 110px height=150px style = \"left : ").append((j + 1) * 130).append("px;\">");
+                    }
+
+                    if (deck.getTableau().getColumns()[j].size() > i && deck.getTableau().getColumns()[j].get(i).isFlipped()) {
                         switch (deck.getTableau().getColumns()[j].get(i).getRank()) {
                             case 1:
-                                deckBuilder.append("<img src='" + "/images/spider-solitaire/hresko/AS.png" + "' width = 130px height=150px>");
+                                deckBuilder.append("<img id = ").append(j).append(i).append(" class = cards-items onclick='").append("replace(this.id);' ").append("src='").append("/images/spider-solitaire/hresko/AS.png").append("' width = 110px height=150px style = \"left : ").append((j + 1) * 130).append("px;\">");
                                 break;
                             case 2:
-                                deckBuilder.append("<img src='" + "/images/spider-solitaire/hresko/2S.png" + "' width = 130px height=150px>");
+                                deckBuilder.append("<img id = ").append(j).append(i).append(" class = cards-items onclick='").append("replace(this.id);' ").append("src='").append("/images/spider-solitaire/hresko/2S.png").append("' width = 110px height=150px style = \"left : ").append((j + 1) * 130).append("px;\">");
                                 break;
                             case 3:
-                                deckBuilder.append("<img src='" + "/images/spider-solitaire/hresko/3S.png" + "' width = 130px height=150px>");
+                                deckBuilder.append("<img id = ").append(j).append(i).append(" class = cards-items onclick='").append("replace(this.id);' ").append("src='").append("/images/spider-solitaire/hresko/3S.png").append("' width = 110px height=150px style = \"left : ").append((j + 1) * 130).append("px;\">");
                                 break;
                             case 4:
-                                deckBuilder.append("<img src='" + "/images/spider-solitaire/hresko/4S.png" + "' width = 130px height=150px>");
+                                deckBuilder.append("<img id = ").append(j).append(i).append(" class = cards-items onclick='").append("replace(this.id);' ").append("src='").append("/images/spider-solitaire/hresko/4S.png").append("' width = 110px height=150px style = \"left : ").append((j + 1) * 130).append("px;\">");
                                 break;
                             case 5:
-                                deckBuilder.append("<img src='" + "/images/spider-solitaire/hresko/5S.png" + "' width = 130px height=150px>");
+                                deckBuilder.append("<img id = ").append(j).append(i).append(" class = cards-items onclick='").append("replace(this.id);' ").append("src='").append("/images/spider-solitaire/hresko/5S.png").append("' width = 110px height=150px style = \"left : ").append((j + 1) * 130).append("px;\">");
                                 break;
                             case 6:
-                                deckBuilder.append("<img src='" + "/images/spider-solitaire/hresko/6S.png" + "' width = 130px height=150px>");
+                                deckBuilder.append("<img id = ").append(j).append(i).append(" class = cards-items onclick='").append("replace(this.id);' ").append("src='").append("/images/spider-solitaire/hresko/6S.png").append("' width = 110px height=150px style = \"left : ").append((j + 1) * 130).append("px;\">");
                                 break;
                             case 7:
-                                deckBuilder.append("<img src='" + "/images/spider-solitaire/hresko/7S.png" + "' width = 130px height=150px>");
+                                deckBuilder.append("<img id = ").append(j).append(i).append(" class = cards-items onclick='").append("replace(this.id);' ").append("src='").append("/images/spider-solitaire/hresko/7S.png").append("' width = 110px height=150px style = \"left : ").append((j + 1) * 130).append("px;\">");
                                 break;
                             case 8:
-                                deckBuilder.append("<img src='" + "/images/spider-solitaire/hresko/8S.png" + "' width = 130px height=150px>");
+                                deckBuilder.append("<img id = ").append(j).append(i).append(" class = cards-items onclick='").append("replace(this.id);' ").append("src='").append("/images/spider-solitaire/hresko/8S.png").append("' width = 110px height=150px style = \"left : ").append((j + 1) * 130).append("px;\">");
                                 break;
                             case 9:
-                                deckBuilder.append("<img src='" + "/images/spider-solitaire/hresko/9S.png" + "' width = 130px height=150px>");
+                                deckBuilder.append("<img id = ").append(j).append(i).append(" class = cards-items onclick='").append("replace(this.id);' ").append("src='").append("/images/spider-solitaire/hresko/9S.png").append("' width = 110px height=150px style = \"left : ").append((j + 1) * 130).append("px;\">");
                                 break;
                             case 10:
-                                deckBuilder.append("<img src='" + "/images/spider-solitaire/hresko/10S.png" + "' width = 130px height=150px>");
+                                deckBuilder.append("<img id = ").append(j).append(i).append(" class = cards-items onclick='").append("replace(this.id);' ").append("src='").append("/images/spider-solitaire/hresko/10S.png").append("' width = 110px height=150px style = \"left : ").append((j + 1) * 130).append("px;\">");
                                 break;
                             case 11:
-                                deckBuilder.append("<img src='" + "/images/spider-solitaire/hresko/JS.png" + "' width = 130px height=150px>");
+                                deckBuilder.append("<img id = ").append(j).append(i).append(" class = cards-items onclick='").append("replace(this.id);' ").append("src='").append("/images/spider-solitaire/hresko/JS.png").append("' width = 110px height=150px style = \"left : ").append((j + 1) * 130).append("px;\">");
                                 break;
                             case 12:
-                                deckBuilder.append("<img src='" + "/images/spider-solitaire/hresko/QS.png" + "' width = 130px height=150px>");
+                                deckBuilder.append("<img id = ").append(j).append(i).append(" class = cards-items onclick='").append("replace(this.id);' ").append("src='").append("/images/spider-solitaire/hresko/QS.png").append("' width = 110px height=150px style = \"left : ").append((j + 1) * 130).append("px;\">");
                                 break;
                             case 13:
-                                deckBuilder.append("<img src='" + "/images/spider-solitaire/hresko/KS.png" + "' width = 130px height=150px>");
+                                deckBuilder.append("<img id = ").append(j).append(i).append(" class = cards-items onclick='").append("replace(this.id);' ").append("src='").append("/images/spider-solitaire/hresko/KS.png").append("' width = 110px height=150px style = \"left : ").append((j + 1) * 130).append("px;\">");
                                 break;
                         }
-                    } else if (deck.getTableau().getColumns()[j].size() > i) {
-                        deckBuilder.append("<img src='" + "/images/spider-solitaire/hresko/back.png" + "' width = 130px height=150px>");
+                    } else {
+                        if (i < deck.getTableau().getColumns()[j].size()) {
+                            deckBuilder.append("<img class = cards-items src='" + "/images/spider-solitaire/hresko/back.png" + "' width = 110px height=150px style = \"left : ").append((j + 1) * 130).append("px;\">");
+                        }
                     }
                 }
                 deckBuilder.append("</div>");
@@ -156,3 +164,4 @@ public class WebUI {
         return deck;
     }
 }
+

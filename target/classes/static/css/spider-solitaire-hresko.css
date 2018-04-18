@@ -17,6 +17,23 @@ body {
     margin-bottom: 5px;
     font-family: 'Montserrat', sans-serif;
     border-color: #27ae60;
+    width: 120px;
+}
+
+#end-game {
+    color: #e74c3c;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-family: 'Montserrat', sans-serif;
+    border-color: #e74c3c;
+    width: 120px;
+    margin-left: 10px;
+}
+
+#end-game:hover, #end-game:active {
+    background-color: #e74c3c;
+    border-color: #e74c3c;
+    color: white;
 }
 
 .btn:hover, .btn:active {
@@ -41,11 +58,7 @@ body {
 }
 
 #main-panel-row {
-    padding-right: 50px;
-}
-
-.row {
-    float: right;
+   justify-content: center;
 }
 
 #score {
@@ -58,19 +71,19 @@ body {
     font-family: 'Montserrat', sans-serif;
     color: white;
     font-size: 20px;
-    padding-left: 80px;
+    padding-left: 5%;
 }
 
 #board {
-    padding-top: 50px;
+    padding-top: 0;
 }
 
 #foundation-row {
-    padding-right: 75px;
+    justify-content: center;
 }
 
-#stock-a {
-    position: absolute;
+.stock-a {
+    left: 10%;
     z-index: 9999;
 }
 
@@ -78,29 +91,30 @@ body {
     padding-left: 25px;
 }
 
-#stock {
-    padding-right: 235px;
-}
-
 #deck-row {
-    padding-top: 20px;
-    padding-right: 50px;
+    padding-top: 50px;
 }
 
 .tableau-row {
-    padding-right: 50px;
     position: absolute;
-}
-
-.tableau-row > img {
-    padding-left: 25px;
 }
 
 #tableau-container {
-    position: absolute;
-    padding-top: 180px;
-    padding-left: 350px;
+   justify-content: center;
 }
+
+#stepBack {
+    margin-right: 10px;
+}
+
+.cards-items {
+    position: absolute;
+}
+
+.navbar {
+    z-index: 9999;
+}
+
 
 
 

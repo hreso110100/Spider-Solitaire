@@ -14,15 +14,23 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:500" rel="stylesheet"/>
 
     <link rel="stylesheet" href="/css/spider-solitaire-hresko.css"/>
+    <script src="/scripts/spider-solitaire-hresko.js"></script>
 
 </head>
 <body>
 
 <nav class="navbar fixed-top">
     <a id="back-arrow" class="nav-link fas fa-angle-left fa-2x" href="/index.html"></a>
-    <p id="title">Spider Solitaire</p>
-    <button class="btn btn-outline-success" type="button" onclick="window.location.href='?command=restart'">New Game
-    </button>
+    <p id="title" >Spider Solitaire</p>
+    <div>
+        <button id="stepBack" class="btn btn-outline-success" type="button"
+                onclick="window.location.href='?command=revert'">Step back
+        </button>
+        <button class="btn btn-outline-success" type="button" onclick="window.location.href='?command=restart'">New Game
+        </button>
+        <button id="end-game" class="btn btn-outline-warning" type="button" onclick="window.location.href='?command=exit'">End Game
+        </button>
+    </div>
 </nav>
 
 <div id="main-panel">
@@ -55,8 +63,5 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
-
-<script src="spider-solitaire-hresko.html"></script>
-
 </body>
 </html>
