@@ -180,17 +180,40 @@ td, tr {
     color: white;
 }
 
-#author-comment {
-    color: white;
-}
-
 #comments-table {
     font-family: 'Montserrat', sans-serif;
     font-size: 18px;
-    max-width: 50%;
-    color: #27ae60;
-    margin-left: 20%;
+    max-width: 40%;
+    color: white;
+    margin-left: 30%;
+    margin-bottom: 5%;
 }
+
+#text-comment {
+    text-align: left;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #27ae60;
+}
+
+#tableau {
+    padding-left: 57px;
+}
+
+#footer {
+    height: 100px;
+    background-color: #8e44ad;
+}
+
+#footer-author {
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+    margin-left: 10%;
+    margin-top: 2%;
+    color: white;
+}
+
 
 
 

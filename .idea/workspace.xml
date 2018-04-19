@@ -3,12 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="36fc79a6-226d-47da-86f7-58ecb17b992b" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sk/tuke/gamestudio/game/spidersolitaire/hresko/webui/WebUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sk/tuke/gamestudio/game/spidersolitaire/hresko/webui/WebUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sk/tuke/gamestudio/server/controller/SpiderSolitaireHreskoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sk/tuke/gamestudio/server/controller/SpiderSolitaireHreskoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sk/tuke/gamestudio/server/service/ScoreServiceJPA.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sk/tuke/gamestudio/server/service/ScoreServiceJPA.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/spider-solitaire-hresko.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/spider-solitaire-hresko.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/spider-solitaire-hresko.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/spider-solitaire-hresko.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sk/tuke/gamestudio/server/controller/SpiderSolitaireHreskoController.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/static/css/spider-solitaire-hresko.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/css/spider-solitaire-hresko.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/spider-solitaire-hresko.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/spider-solitaire-hresko.html" afterDir="false" />
     </list>
@@ -74,20 +70,29 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="spider-solitaire-hresko.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="spider-solitaire-hresko.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/spider-solitaire-hresko.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="388">
-              <caret line="191" column="21" lean-forward="true" selection-start-line="191" selection-start-column="21" selection-end-line="191" selection-end-column="21" />
+            <state relative-caret-position="242">
+              <caret line="198" lean-forward="true" selection-start-line="198" selection-end-line="198" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="spider-solitaire-hresko.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="spider-solitaire-hresko.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/static/scripts/spider-solitaire-hresko.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="14" column="72" selection-start-line="14" selection-start-column="72" selection-end-line="14" selection-end-column="72" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="spider-solitaire-hresko.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/spider-solitaire-hresko.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="310">
-              <caret line="88" column="98" selection-start-line="88" selection-start-column="98" selection-end-line="88" selection-end-column="98" />
+            <state relative-caret-position="1022">
+              <caret line="99" column="54" selection-start-line="99" selection-start-column="54" selection-end-line="99" selection-end-column="54" />
               <folding>
                 <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -176,13 +181,13 @@
         <option value="$PROJECT_DIR$/src/main/resources/static/index.html" />
         <option value="$PROJECT_DIR$/src/main/java/sk/tuke/gamestudio/game/spidersolitaire/hresko/card/Card.java" />
         <option value="$PROJECT_DIR$/src/main/resources/scripts/spider-solitaire-hresko.js" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/scripts/spider-solitaire-hresko.js" />
         <option value="$PROJECT_DIR$/src/main/java/sk/tuke/gamestudio/game/spidersolitaire/hresko/deck/Deck.java" />
         <option value="$PROJECT_DIR$/src/main/java/sk/tuke/gamestudio/game/spidersolitaire/hresko/webui/WebUI.java" />
         <option value="$PROJECT_DIR$/src/main/java/sk/tuke/gamestudio/server/service/ScoreServiceJPA.java" />
         <option value="$PROJECT_DIR$/src/main/java/sk/tuke/gamestudio/server/controller/SpiderSolitaireHreskoController.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/css/spider-solitaire-hresko.css" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/spider-solitaire-hresko.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/scripts/spider-solitaire-hresko.js" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/css/spider-solitaire-hresko.css" />
       </list>
     </option>
   </component>
@@ -551,7 +556,7 @@
       <workItem from="1523647384021" duration="102000" />
       <workItem from="1523697264816" duration="18052000" />
       <workItem from="1523784826720" duration="1022000" />
-      <workItem from="1523788015779" duration="118226000" />
+      <workItem from="1523788015779" duration="121543000" />
     </task>
     <task id="LOCAL-00001" summary="test commit from IDEA">
       <created>1521287787327</created>
@@ -638,7 +643,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="456669000" />
+    <option name="totallyTimeSpent" value="459986000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -671,7 +676,7 @@
       <window_info anchor="bottom" id="Java Enterprise" order="16" weight="0.32951945" />
       <window_info anchor="right" id="Capture Analysis" order="6" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.7836676" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49932885" weight="0.2965616" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49932885" visible="true" weight="0.2965616" />
       <window_info anchor="bottom" id="Spring" order="17" />
       <window_info anchor="bottom" id="Terminal" order="12" weight="0.32808024" />
       <window_info id="Persistence" order="6" sideWeight="0.5157593" side_tool="true" weight="0.24362417" />
@@ -1062,20 +1067,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/scripts/spider-solitaire-hresko.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="72" selection-start-line="14" selection-start-column="72" selection-end-line="14" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sk/tuke/gamestudio/game/spidersolitaire/hresko/webui/WebUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="99" column="39" selection-start-line="99" selection-start-column="39" selection-end-line="99" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/sk/tuke/gamestudio/server/controller/SpiderSolitaireHreskoController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="527">
@@ -1114,23 +1105,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/spider-solitaire-hresko.css">
+    <entry file="file://$PROJECT_DIR$/src/main/java/sk/tuke/gamestudio/game/spidersolitaire/hresko/webui/WebUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="388">
-          <caret line="191" column="21" lean-forward="true" selection-start-line="191" selection-start-column="21" selection-end-line="191" selection-end-column="21" />
+        <state relative-caret-position="124">
+          <caret line="99" column="39" selection-start-line="99" selection-start-column="39" selection-end-line="99" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/scripts/spider-solitaire-hresko.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="72" selection-start-line="14" selection-start-column="72" selection-end-line="14" selection-end-column="72" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/spider-solitaire-hresko.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="88" column="98" selection-start-line="88" selection-start-column="98" selection-end-line="88" selection-end-column="98" />
+        <state relative-caret-position="1022">
+          <caret line="99" column="54" selection-start-line="99" selection-start-column="54" selection-end-line="99" selection-end-column="54" />
           <folding>
             <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#div#2;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/spider-solitaire-hresko.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="198" lean-forward="true" selection-start-line="198" selection-end-line="198" />
         </state>
       </provider>
     </entry>

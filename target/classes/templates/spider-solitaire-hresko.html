@@ -83,15 +83,21 @@
             <p id="comments-text">Players feelings</p>
         </div>
         <div class="row">
-            <table id="comments-table" class="table">
+            <table id="comments-table" class="table table-striped">
                 <tbody>
                 <tr th:each="comments: ${comments}">
-                    <td id="author-comment" style="width: 16.66%" th:text="${comments.player} + '     said '"/>
-                    <td style="width: 50.66%" th:text="${comments.comment}"/>
+                    <td id="author-comment" style="width: 16.66%" th:text="${comments.player} + ' : '"/>
+                    <td id="text-comment" style="width: 50.66%" th:text="${comments.comment}"/>
                 </tr>
                 </tbody>
             </table>
         </div>
+    </div>
+</div>
+
+<div id="footer" class="container-fluid">
+    <div class="row">
+        <p id="footer-author">Created by Dávid Hreško 2018</p>
     </div>
 </div>
 
