@@ -1,5 +1,6 @@
 package sk.tuke.gamestudio.server.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -7,12 +8,24 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.context.WebApplicationContext;
 import sk.tuke.gamestudio.game.spidersolitaire.hresko.webui.WebUI;
+import sk.tuke.gamestudio.server.service.CommentService;
+import sk.tuke.gamestudio.server.service.RatingService;
+import sk.tuke.gamestudio.server.service.ScoreService;
 
 @Controller
 @Scope(WebApplicationContext.SCOPE_SESSION)
 public class SpiderSolitaireHreskoController {
 
     private WebUI webUI = new WebUI();
+
+    @Autowired
+    private ScoreService scoreService;
+
+    @Autowired
+    private RatingService ratingService;
+
+    @Autowired
+    private CommentService commentService;
 
     //http://localhost:8080/spider-solitaire-hresko
 
@@ -30,6 +43,9 @@ public class SpiderSolitaireHreskoController {
         model.addAttribute("renderStock", webUI.renderStock());
         model.addAttribute("renderFoundation", webUI.renderFoundations());
         model.addAttribute("renderDeck", webUI.renderDeck());
+        model.addAttribute("scores", scoreService.getBestScores("spider-solitaire"));
+        model.addAttribute("ratings", ratingService.getAverageRating("spider-solitaire"));
+        model.addAttribute("comments", commentService.getComments("spider-solitaire"));
 
         return "spider-solitaire-hresko";
     }

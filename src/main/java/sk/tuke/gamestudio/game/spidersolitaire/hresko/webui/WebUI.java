@@ -98,13 +98,12 @@ public class WebUI {
         }
 
         if (deck.getGameState() == 0) {
-
             for (int i = 0; i < size; i++) {
 
                 deckBuilder.append("<div class='tableau-row row' style = \"z-index : ").append(i + 1).append("; padding-top :").append(i * 30).append("px;\">");
                 for (int j = 0; j < 10; j++) {
 
-                    if (i == 0 && deck.getTableau().getColumns()[j].size() == 0 ) {
+                    if (i == 0 && deck.getTableau().getColumns()[j].size() == 0) {
                         deckBuilder.append("<img id = ").append(j).append(i).append(" class = cards-items onclick='").append("replace(this.id);' ").append("src='").append("/images/spider-solitaire/hresko/foundation_spot.png").append("' width = 110px height=150px style = \"left : ").append((j + 1) * 130).append("px;\">");
                     }
 

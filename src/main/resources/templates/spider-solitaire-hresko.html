@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:tx="http://www.w3.org/1999/xhtml">
 
 <head>
     <title>Spider-Solitaire</title>
@@ -21,15 +21,18 @@
 
 <nav class="navbar fixed-top">
     <a id="back-arrow" class="nav-link fas fa-angle-left fa-2x" href="/index.html"></a>
-    <p id="title">Spider Solitaire</p>
+
     <div>
         <button id="stepBack" class="btn btn-outline-success" type="button"
-                onclick="window.location.href='?command=revert'">Step back
+                onclick="window.location.href='?command=revert'">
+            <i class="fas fa-history"></i>Step back
         </button>
-        <button class="btn btn-outline-success" type="button" onclick="window.location.href='?command=restart'">New Game
+        <button class="btn btn-outline-success" type="button" onclick="window.location.href='?command=restart'">
+            <i class="fas fa-rocket"></i>New Game
         </button>
         <button id="end-game" class="btn btn-outline-warning" type="button"
-                onclick="window.location.href='?command=exit'">End Game
+                onclick="window.location.href='?command=exit'">
+            <i class="fas fa-times"></i>End Game
         </button>
     </div>
 </nav>
@@ -49,11 +52,48 @@
             <p id="stock" th:utext="${renderStock}"></p>
             <p id="foundation" th:utext="${renderFoundation}"></p>
         </div>
-    </div>
-    <div id="tableau-container" class="container-fluid" th:utext="${renderDeck}">
-
+        <div id="bugged-row" class="row">
+            <p id="tableau" th:utext="${renderDeck}"></p>
+        </div>
     </div>
 </div>
+
+<div id="score-container">
+    <div class="container-fluid">
+        <div class="row">
+            <p id="top-players-text">Top players</p>
+            <table id="score-table" class="table">
+                <thead>
+                <tr>
+                    <th scope="col">Points</th>
+                    <th scope="col">Nickname</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="score: ${scores}">
+                    <td style="width: 8.66%" th:text="${score.points}"/>
+                    <td style="width: 50.66%" th:text="${score.player}"/>
+                </tr>
+                </tbody>
+            </table>
+            <p id="rating-text">Average rating</p>
+            <p id="rating" th:utext="${ratings} + '/5'"></p>
+        </div>
+        <div class="row">
+            <p id="comments-text">Players feelings</p>
+        </div>
+        <div class="row">
+            <table id="comments-table" class="table">
+                <tbody>
+                <tr th:each="comments: ${comments}">
+                    <td id="author-comment" style="width: 16.66%" th:text="${comments.player} + ' said '"/>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"

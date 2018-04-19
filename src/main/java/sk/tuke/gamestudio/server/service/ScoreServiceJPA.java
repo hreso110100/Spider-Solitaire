@@ -22,6 +22,6 @@ public class ScoreServiceJPA implements ScoreService {
     @SuppressWarnings("unchecked")
     public List<Score> getBestScores(String game) throws ScoreException {
         return entityManager.createNamedQuery("Score.getBestScores")
-                .setParameter("game", game).setMaxResults(10).getResultList();
+                .setParameter("game", game).setMaxResults(5).getResultList();
     }
 }
