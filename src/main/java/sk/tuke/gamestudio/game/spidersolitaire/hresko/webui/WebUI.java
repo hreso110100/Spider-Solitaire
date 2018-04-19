@@ -65,6 +65,8 @@ public class WebUI {
     public String renderFoundations() {
         StringBuilder foundationBuilder = new StringBuilder();
 
+        foundationBuilder.append("<img class = foundation src='" + "/images/spider-solitaire/hresko/empty.png" + "' width = 130px height=150px>");
+
         for (int i = 0; i < deck.getFoundations().getFoundationList().length; i++) {
             if (!deck.getFoundations().getFoundationList()[i].isEmpty()) {
                 foundationBuilder.append("<img class = foundation src='" + "/images/spider-solitaire/hresko/KS.png" + "' width = 130px height=150px>");

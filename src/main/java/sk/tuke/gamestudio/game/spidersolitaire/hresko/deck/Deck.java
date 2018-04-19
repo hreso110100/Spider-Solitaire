@@ -125,10 +125,10 @@ public class Deck {
             System.out.println("SOURCE ROW OR DESTINATION ROW OUT OF INDEX !!!");
         }
         checkForFullRun();
-
+/*
         if (checkIfGameIsLost()) {
             afterLost();
-        }
+        }*/
     }
 
     /**
@@ -214,7 +214,7 @@ public class Deck {
      *
      * @return true if yes or false if not
      */
-
+/*
     private boolean checkIfGameIsLost() {
         if (removeItemFromArrayIndex == 50) {
             for (int i = 0; i < tableau.getColumns().length; i++) {
@@ -242,7 +242,7 @@ public class Deck {
             return true;
         }
         return false;
-    }
+    }*/
 
     public void callScoreService() {
         Score score = new Score("david", getScore(), new Date());
@@ -375,9 +375,9 @@ public class Deck {
                 }
             } else {
                 System.out.println("STOCK IS EMPTY OR TABLEAU HAS EMPTY ROW");
-                if (checkIfGameIsLost()) {
+               /* if (checkIfGameIsLost()) {
                     afterLost();
-                }
+                }*/
                 break;
             }
         }
