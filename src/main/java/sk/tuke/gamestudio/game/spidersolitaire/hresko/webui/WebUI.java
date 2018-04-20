@@ -1,6 +1,11 @@
 package sk.tuke.gamestudio.game.spidersolitaire.hresko.webui;
 
 import sk.tuke.gamestudio.game.spidersolitaire.hresko.deck.Deck;
+import sk.tuke.gamestudio.server.entity.Score;
+import sk.tuke.gamestudio.server.service.ScoreService;
+import sk.tuke.gamestudio.server.service.ScoreServiceJPA;
+
+import java.util.Date;
 
 public class WebUI {
 
@@ -25,6 +30,9 @@ public class WebUI {
 
                 case "take": {
                     value = deck.takeCardsFromStock(deck.getTableau().getColumns());
+                    break;
+                }
+                case "exit": {
                     break;
                 }
                 case "revert": {
@@ -58,6 +66,7 @@ public class WebUI {
             errorBuilder.append("<strong>You should read rules ! </strong>");
             errorBuilder.append("Every column must contain at least one card to use stock.");
             errorBuilder.append("</div>");
+            value = 0;
 
             return errorBuilder.toString();
         }

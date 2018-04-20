@@ -32,6 +32,13 @@ body {
     border-radius: 15px;
 }
 
+#help-button:hover, #help-button:active {
+    background-color: #8e44ad;
+    border-color: #8e44ad;
+    border-radius: 15px;
+    color: white;
+}
+
 i {
     margin-right: 8px;
 }

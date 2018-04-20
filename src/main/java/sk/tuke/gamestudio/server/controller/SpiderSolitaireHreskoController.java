@@ -8,9 +8,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.context.WebApplicationContext;
 import sk.tuke.gamestudio.game.spidersolitaire.hresko.webui.WebUI;
+import sk.tuke.gamestudio.server.entity.Score;
 import sk.tuke.gamestudio.server.service.CommentService;
 import sk.tuke.gamestudio.server.service.RatingService;
 import sk.tuke.gamestudio.server.service.ScoreService;
+
+import java.util.Date;
 
 @Controller
 @Scope(WebApplicationContext.SCOPE_SESSION)
@@ -53,11 +56,11 @@ public class SpiderSolitaireHreskoController {
 
     @RequestMapping("spider-solitaire-hresko-login")
     public String spiderSolitaireLogin() {
-        return  "spider-solitaire-hresko-login";
+        return "spider-solitaire-hresko-login";
     }
 
     @RequestMapping("spider-solitaire-hresko-registration")
     public String spiderSolitaireRegistration() {
-        return  "spider-solitaire-hresko-registration";
+        return "spider-solitaire-hresko-registration";
     }
 }

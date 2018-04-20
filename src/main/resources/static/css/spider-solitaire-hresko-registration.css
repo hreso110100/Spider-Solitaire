@@ -23,10 +23,12 @@ body {
     max-width: 330px;
     padding: 15px;
     margin: 0 auto;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .form-signin .checkbox {
     font-weight: 400;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .form-signin .form-control {
@@ -35,6 +37,7 @@ body {
     height: auto;
     padding: 10px;
     font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .form-signin .form-control:focus {
@@ -54,26 +57,30 @@ body {
 }
 
 .h3 {
-    font-size: 30px;
+    font-size: 25px;
     color: white;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .btn, .btn-outline-primary {
     color: white;
-    background-color: #f1c40f;
-    border-color: #f1c40f;
+    background-color: #27ae60;
+    border-color: #27ae60;
     text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .btn:hover, .btn:active, .btn:focus, .btn:visited {
-    background-color: #f39c12;
-    border-color: #f39c12;
+    background-color: #8e44ad;
+    border-color: #8e44ad;
     text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .text-copyright {
     color: white;
     font-size: 15px;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .navbar {
@@ -85,8 +92,9 @@ body {
 }
 
 .navbar-brand {
-    color: #f1c40f;
+    color: #27ae60;
     font-size: 25px;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .nav-link {
@@ -95,47 +103,38 @@ body {
 }
 
 .nav-link:hover {
-    color: #f1c40f;
+    color: #27ae60;
+    font-family: 'Montserrat', sans-serif;
 }
 
 #or {
     display: block;
     padding-top: 10px;
     color: white;
-}
-
-#facebook-button {
-    background-color: #2980b9;
-    border-color: #2980b9;
-    width: 110px;
-    height: 50px;
-    margin: 10px;
-}
-
-#google-button {
-    background-color: #e74c3c;
-    border-color: #e74c3c;
-    width: 110px;
-    height: 50px;
-    margin: 10px;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .checkbox {
     color: white;
+    font-family: 'Montserrat', sans-serif;
 }
 
 #error_message {
     color: #e74c3c;
+    font-family: 'Montserrat', sans-serif;
 }
 
 #breadcumb {
     margin: 10px;
+    font-family: 'Montserrat', sans-serif;
 }
 
 #breadcumb > a {
-    color: #f1c40f;
+    color: #27ae60;
+    font-family: 'Montserrat', sans-serif;
 }
 
 #breadcumb > span {
     color: white;
+    font-family: 'Montserrat', sans-serif;
 }
