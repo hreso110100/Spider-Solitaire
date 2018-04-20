@@ -4,6 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import sk.tuke.gamestudio.game.spidersolitaire.hresko.deck.Deck;
 import sk.tuke.gamestudio.server.entity.Score;
+import sk.tuke.gamestudio.server.service.CommentService;
+import sk.tuke.gamestudio.server.service.RatingService;
 import sk.tuke.gamestudio.server.service.ScoreService;
 import sk.tuke.gamestudio.server.service.ScoreServiceJPA;
 
@@ -20,6 +22,12 @@ public class WebUI {
 
     @Autowired
     private ScoreService scoreService;
+
+    @Autowired
+    private CommentService commentService;
+
+    @Autowired
+    private RatingService ratingService;
 
     public int getScore() {
         return deck.getScore();
@@ -38,7 +46,7 @@ public class WebUI {
                     break;
                 }
                 case "exit": {
-                    scoreService.addScore(new Score("david",getScore(),new Date()));
+                    scoreService.addScore(new Score("david", getScore(), new Date()));
                     deck = new Deck();
                     break;
                 }
@@ -108,6 +116,8 @@ public class WebUI {
         }
         return foundationBuilder.toString();
     }
+
+    // TODO gamestate ak vyhraty tak volat servisy, vid CONSOLE UI metodu checkifgamewon()
 
     public String renderDeck() {
 

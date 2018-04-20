@@ -62,9 +62,9 @@ public class ConsoleUI implements InitializingBean {
                     drawDeck();
                     break;
                 case "exit": {
-                    deck.callScoreService();
-                    deck.callCommentService();
-                    deck.callRatingService();
+                    //deck.callScoreService();
+                    //deck.callCommentService();
+                    //deck.callRatingService();
                     System.exit(0);
                     break;
                 }

@@ -131,9 +131,7 @@ public class Deck {
         }*/
     }
 
-    /**
-     * This method call service after game is lost
-     */
+    /* COMMENT REASON : CAUSE BUGS IN WEB UI
 
     private void afterLost() {
         setGameState(1);
@@ -142,6 +140,8 @@ public class Deck {
         callRatingService();
         System.exit(0);
     }
+
+    */
 
     /**
      * This method check for full run of cards
@@ -202,19 +202,16 @@ public class Deck {
         foundationsFilled++;
         if (foundationsFilled == 8) {
             setGameState(2);
-            callScoreService();
-            callCommentService();
-            callRatingService();
-            System.exit(0);
+            // TODO Servisy budu volane z renderDeck() v WEBUI
+//            callScoreService();
+//            callCommentService();
+//            callRatingService();
+//            System.exit(0);
         }
     }
 
-    /**
-     * This method check if game is lost
-     *
-     * @return true if yes or false if not
-     */
-/*
+/*  REASON OF COMMENTED : CAUSED BUGS IN WEB UI, USE CAN ONLY MANUALLY END GAME :/
+
     private boolean checkIfGameIsLost() {
         if (removeItemFromArrayIndex == 50) {
             for (int i = 0; i < tableau.getColumns().length; i++) {
@@ -244,14 +241,11 @@ public class Deck {
         return false;
     }*/
 
+    /* CALLING SERVICES IN CONSOLE UI, NOT NEEDED IN WEB UI
+
     public void callScoreService() {
         Score score = new Score("david", getScore(), new Date());
         scoreService.addScore(score);
-        System.out.println("BEST SCORES");
-        for (int i = 0; i < scoreService.getBestScores("spider-solitaire").size(); i++) {
-            System.out.println(scoreService.getBestScores("spider-solitaire").get(i).getPlayer() + " " +
-                    scoreService.getBestScores("spider-solitaire").get(i).getPoints());
-        }
     }
 
     public void callCommentService() {
@@ -261,11 +255,6 @@ public class Deck {
 
         Comment comment = new Comment("david", input, new Date());
         commentService.addComment(comment);
-        System.out.println("RECENT COMMENTS");
-        for (int i = 0; i < commentService.getComments("spider-solitaire").size(); i++) {
-            System.out.println(commentService.getComments("spider-solitaire").get(i).getPlayer() + " " +
-                    commentService.getComments("spider-solitaire").get(i).getComment());
-        }
     }
 
     public void callRatingService() {
@@ -282,6 +271,8 @@ public class Deck {
             System.out.println("ROW DOESN'T EXIST");
         }
     }
+
+    */
 
 /*
 
