@@ -202,7 +202,7 @@ td, tr {
 }
 
 #footer {
-    height: 100px;
+    height: 200px;
     background-color: #8e44ad;
 }
 
@@ -219,6 +219,13 @@ td, tr {
     color: white;
     width: 700px;
     font-family: 'Montserrat', sans-serif;
+}
+
+#powered-by {
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 2%;
+    color: white;
 }
 
 
