@@ -18,10 +18,12 @@ function replace(clicked_id) {
     }
 }
 
-function dismiss () {
-    $("#success-alert").hide();
+$(document).ready(function () {
 
-    $("#success-alert").fadeTo(2000, 500).slideUp(500, function () {
-        $("#success-alert").slideUp(500);
-    });
+    window.setTimeout(function () {
+        $(".alert").fadeTo(1000, 0).slideUp(1000, function () {
+            $(this).remove();
+        });
+    }, 2000);
+
 });

@@ -15,13 +15,38 @@
 
     <link rel="stylesheet" href="/css/spider-solitaire-hresko.css"/>
 
+    <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyDXWRdIxiX0vLYj3SFUrTbtC3leCUdfnc4",
+            authDomain: "spider-solitaire-201719.firebaseapp.com",
+            databaseURL: "https://spider-solitaire-201719.firebaseio.com",
+            projectId: "spider-solitaire-201719",
+            storageBucket: "spider-solitaire-201719.appspot.com",
+            messagingSenderId: "609076724596"
+        };
+        firebase.initializeApp(config);
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+
     <script src="/scripts/spider-solitaire-hresko.js"></script>
+    <script src="/scripts/spider-solitaire-hresko-logout.js"></script>
+    <script src="/scripts/spider-solitaire-hresko-restriction.js"></script>
 
 </head>
 <body>
 
 <nav class="navbar fixed-top">
-    <a id="back-arrow" class="nav-link fas fa-angle-left fa-2x" href="/index.html"></a>
+    <a id="back-arrow" class="nav-link fas fa-angle-left fa-2x" onclick="logOut()"></a>
 
     <div>
         <button id="stepBack" class="btn btn-outline-success" type="button"
@@ -34,6 +59,9 @@
         <button id="end-game" class="btn btn-outline-warning" type="button"
                 onclick="window.location.href='?command=exit'">
             <i class="fas fa-times"></i>End Game
+        </button>
+        <button id="help" class="btn btn-outline-success" data-toggle="modal" data-target="#modalLong" type="button">
+            <i class="fas fa-question"></i>Help
         </button>
     </div>
 </nav>
@@ -58,6 +86,99 @@
         </div>
         <div id="bugged-row" class="row">
             <p id="tableau" th:utext="${renderDeck}"></p>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Rules</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <strong>Cards</strong>
+                <br/>
+                <br/>
+                Cards have four distinct suits: hearts, clubs, diamonds, and spades. As well, there are 13 unique ranks:
+                the king, the queen, the jack, the ten, the 9, the 8, the 7, the 6, the 5, the 4, the 3, the 2, and
+                finally the ace. Each card has a suit and a rank and a deck consists of a complete set of each of the 52
+                unique cards.
+                <br/>
+                <br/>
+                <strong>Layout</strong>
+                <br/>
+                <br/>
+                The table can be broken up into three basic areas, the tableau, the stock, and the foundation. In this
+                version you are only able to see the tableau. For foundations and stock you are able to see the count of
+                cards.
+                <br/>
+                <br/>
+                <strong>The tableau</strong>
+                <br/>
+                <br/>
+                The tableau is the in-play area where most of the action takes place. It's sectioned horizontally into
+                10 equal-sized unmarked areas called columns, sometimes referred to slots. Each column is simply an area
+                where a pile of cards is usually situated.
+                <br/>
+                <br/>
+                <strong>The stock</strong>
+                <br/>
+                <br/>
+                The stock is where the undealt cards are kept. In order to deal cards to begin a new round the player
+                clicks in this area, which causes 10 cards to be dealt face-up into the tableau, one into each column.
+                However, for a deal to succeed there must be at least one card in every column.
+                <br/>
+                <br/>
+                <strong>The foundation</strong>
+                <br/>
+                <br/>
+                The foundation is where assembled suits are displayed.
+                <br/>
+                <br/>
+                <strong>Starting layout</strong>
+                <br/>
+                <br/>
+                The computer will deal a total of 44 face-down cards, 5 into each of the first 4 columns and 4 into each
+                of the remaining 6 columns. These are most commonly referred to as either hidden cards or non-exposed
+                cards because only the back of each card can be seen, which hides its rank and suit.Immediately after
+                all the hidden cards are dealt, one face-up card is dealt into each of the 10 columns. These are usually
+                called visible cards or exposed cards because their ranks and suits are exposed for the player to see.
+                <br/>
+                <br/>
+                <strong>Run</strong>
+                <br/>
+                <br/>
+                Every rank has an assigned numerical value. The king is worth the most, then the queen is worth 1 less,
+                then the jack, the ten, and so on down to the ace, which is worth the least.Cards can be, and often are,
+                ordered by their ranks.
+                <br/>
+                This is accomplished by arranging them in order so that the value of each card's rank is one off from
+                both its predecessor and its successor. There are two difference ways to do this, either ascending or
+                descending; however, in Spider Solitaire, only the latter way is significant.
+                <br/>
+                Consecutive cards within a column which are ordered by rank so that the value of each rank is exactly 1
+                less than the rank before are collectively called a run. For example, a run might consist of a king
+                followed by a queen and then a jack, which would be a 3-card run. The king would be the highest in its
+                column as seen on the screen and the jack, the lowest.
+                <br/>
+                <br/>
+                <strong>Score</strong>
+                <br/>
+                <br/>
+                The score is calculated per every full run. If you complete run below than 20 steps (take or move
+                action) you are rewarded by 100 points. If you complete run with more than 20 steps your points are
+                calculated by following formula : 100 - NUMBER_OF_STEPS.
+                <br/>
+                So your final score is POINTS_PER_ROW * 8.
+            </div>
+            <div class="modal-footer">
+                <button id="help-button" type="button" class="btn" data-dismiss="modal">Got it !</button>
+            </div>
         </div>
     </div>
 </div>
@@ -101,23 +222,12 @@
 
 <div id="footer" class="container-fluid">
     <div class="row">
-        <p id="footer-author" class="col-lg-3">Created by Dávid Hreško 2018</p>
-        <div class="col-lg-auto">
-            <p id="powered-by">Powered by</p>
+        <div id="footer-author" class="col-md-3">Created by Dávid Hreško 2018</div>
+        <div id="image-kpi" class="col-md-4 ml-auto">
             <img src="/images/spider-solitaire/hresko/kpi.png" width="150px" height="150px"/>
         </div>
     </div>
 </div>
 
-
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
 </body>
 </html>

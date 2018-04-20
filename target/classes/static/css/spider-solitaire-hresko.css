@@ -21,6 +21,17 @@ body {
     border-radius: 15px;
 }
 
+#help-button {
+    color: white;
+    background-color: #27ae60;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-family: 'Montserrat', sans-serif;
+    border-color: #27ae60;
+    width: 140px;
+    border-radius: 15px;
+}
+
 i {
     margin-right: 8px;
 }
@@ -40,6 +51,27 @@ i {
     border-color: #e74c3c;
     border-radius: 15px;
     color: white;
+}
+
+#help {
+    color: #3498db;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-family: 'Montserrat', sans-serif;
+    border-color: #3498db;
+    width: 140px;
+    margin-left: 10px;
+}
+
+#help:hover, #help:active {
+    background-color: #3498db;
+    border-color: #3498db;
+    border-radius: 15px;
+    color: white;
+}
+
+.modal {
+    padding-top: 50px;
 }
 
 .btn:hover, .btn:active {
@@ -202,15 +234,23 @@ td, tr {
 }
 
 #footer {
-    height: 200px;
+    height: 150px;
     background-color: #8e44ad;
+}
+
+#end {
+    justify-content: flex-start;
+}
+
+#end2 {
+    justify-content: flex-end;
 }
 
 #footer-author {
     font-size: 20px;
     font-family: 'Montserrat', sans-serif;
+    margin-top: 3%;
     margin-left: 10%;
-    margin-top: 2%;
     color: white;
 }
 
@@ -221,11 +261,8 @@ td, tr {
     font-family: 'Montserrat', sans-serif;
 }
 
-#powered-by {
-    font-size: 20px;
-    font-family: 'Montserrat', sans-serif;
-    margin-top: 2%;
-    color: white;
+#image-kpi {
+    margin-left: 20%;
 }
 
 

@@ -50,4 +50,14 @@ public class SpiderSolitaireHreskoController {
 
         return "spider-solitaire-hresko";
     }
+
+    @RequestMapping("spider-solitaire-hresko-login")
+    public String spiderSolitaireLogin() {
+        return  "spider-solitaire-hresko-login";
+    }
+
+    @RequestMapping("spider-solitaire-hresko-registration")
+    public String spiderSolitaireRegistration() {
+        return  "spider-solitaire-hresko-registration";
+    }
 }
