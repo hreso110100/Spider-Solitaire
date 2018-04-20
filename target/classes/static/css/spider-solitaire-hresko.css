@@ -68,6 +68,10 @@ i {
     justify-content: center;
 }
 
+#main-panel-error {
+    justify-content: center;
+}
+
 #score {
     font-family: 'Montserrat', sans-serif;
     color: white;
@@ -83,7 +87,7 @@ i {
 
 #board {
     padding-top: 0;
-    justify-content: center;
+    padding-right: 145px;
 }
 
 #foundation-row {
@@ -197,10 +201,6 @@ td, tr {
     background-color: #27ae60;
 }
 
-#tableau {
-    padding-left: 57px;
-}
-
 #footer {
     height: 100px;
     background-color: #8e44ad;
@@ -212,6 +212,13 @@ td, tr {
     margin-left: 10%;
     margin-top: 2%;
     color: white;
+}
+
+.alert {
+    background-color: #e74c3c;
+    color: white;
+    width: 650px;
+    font-family: 'Montserrat', sans-serif;
 }
 
 

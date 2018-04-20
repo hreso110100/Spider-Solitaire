@@ -14,6 +14,7 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:500" rel="stylesheet"/>
 
     <link rel="stylesheet" href="/css/spider-solitaire-hresko.css"/>
+
     <script src="/scripts/spider-solitaire-hresko.js"></script>
 
 </head>
@@ -42,6 +43,9 @@
         <div id="main-panel-row" class="row">
             <p id="score" th:text="'Score : '+ ${score}"></p>
             <p id="steps" th:text="'Steps : ' + ${steps}"></p>
+        </div>
+        <div id="main-panel-error" class="row">
+            <p th:utext="${renderError}"></p>
         </div>
     </div>
 </div>

@@ -42,6 +42,7 @@ public class SpiderSolitaireHreskoController {
         model.addAttribute("steps", webUI.getSteps());
         model.addAttribute("renderStock", webUI.renderStock());
         model.addAttribute("renderFoundation", webUI.renderFoundations());
+        model.addAttribute("renderError", webUI.renderError());
         model.addAttribute("renderDeck", webUI.renderDeck());
         model.addAttribute("scores", scoreService.getBestScores("spider-solitaire"));
         model.addAttribute("ratings", ratingService.getAverageRating("spider-solitaire"));

@@ -364,7 +364,7 @@ public class Deck {
      * @param columns represents array of columns in tableau
      */
 
-    public void takeCardsFromStock(List[] columns) {
+    public int takeCardsFromStock(List[] columns) {
 
         for (int i = 0; i < columns.length; i++) {
             if (checkLengthOfColumns(tableau.getColumns()) && removeItemFromArrayIndex <= 49) {
@@ -378,10 +378,11 @@ public class Deck {
                /* if (checkIfGameIsLost()) {
                     afterLost();
                 }*/
-                break;
+                return 2;
             }
         }
         checkForFullRun();
+        return 1;
     }
 
     // getters and setters

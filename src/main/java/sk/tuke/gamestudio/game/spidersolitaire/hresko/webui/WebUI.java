@@ -5,6 +5,7 @@ import sk.tuke.gamestudio.game.spidersolitaire.hresko.deck.Deck;
 public class WebUI {
 
     private Deck deck;
+    private int value;
 
     public WebUI() {
         deck = new Deck();
@@ -23,7 +24,7 @@ public class WebUI {
             switch (command) {
 
                 case "take": {
-                    deck.takeCardsFromStock(deck.getTableau().getColumns());
+                    value = deck.takeCardsFromStock(deck.getTableau().getColumns());
                     break;
                 }
                 case "revert": {
@@ -48,6 +49,22 @@ public class WebUI {
 
     }
 
+    public String renderError() {
+
+        StringBuilder errorBuilder = new StringBuilder();
+
+        if (value == 2) {
+            errorBuilder.append("<div class= alert id=success-alert>");
+            errorBuilder.append("<strong>You should read rules ! </strong>");
+            errorBuilder.append("Every column must contain at least one card to use stock.");
+            errorBuilder.append("</div>");
+
+            return errorBuilder.toString();
+        }
+
+        return null;
+    }
+
     public String renderStock() {
         StringBuilder stockBuilder = new StringBuilder();
 
@@ -58,7 +75,6 @@ public class WebUI {
         } else {
             stockBuilder.append("<img class = stock-a src='" + "/images/spider-solitaire/hresko/empty_stock.png" + "' width = 110px height=150px>");
         }
-
         return stockBuilder.toString();
     }
 
