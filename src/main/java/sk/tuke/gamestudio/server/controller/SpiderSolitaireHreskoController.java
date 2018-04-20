@@ -19,7 +19,8 @@ import java.util.Date;
 @Scope(WebApplicationContext.SCOPE_SESSION)
 public class SpiderSolitaireHreskoController {
 
-    private WebUI webUI = new WebUI();
+    @Autowired
+    private WebUI webUI;
 
     @Autowired
     private ScoreService scoreService;

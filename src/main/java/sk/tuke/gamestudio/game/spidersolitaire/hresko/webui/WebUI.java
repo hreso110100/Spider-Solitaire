@@ -1,5 +1,7 @@
 package sk.tuke.gamestudio.game.spidersolitaire.hresko.webui;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import sk.tuke.gamestudio.game.spidersolitaire.hresko.deck.Deck;
 import sk.tuke.gamestudio.server.entity.Score;
 import sk.tuke.gamestudio.server.service.ScoreService;
@@ -15,6 +17,9 @@ public class WebUI {
     public WebUI() {
         deck = new Deck();
     }
+
+    @Autowired
+    private ScoreService scoreService;
 
     public int getScore() {
         return deck.getScore();
@@ -33,6 +38,8 @@ public class WebUI {
                     break;
                 }
                 case "exit": {
+                    scoreService.addScore(new Score("david",getScore(),new Date()));
+                    deck = new Deck();
                     break;
                 }
                 case "revert": {
