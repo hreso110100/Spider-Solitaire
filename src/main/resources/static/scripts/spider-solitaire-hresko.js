@@ -62,7 +62,7 @@ function saveData() {
     document.getElementById("save-button").innerHTML = "Saved !";
     setTimeout(function () {
         document.getElementById("save-button").disabled = true;
-    }, 1000);
+    }, 500);
 
 }
 
