@@ -15,7 +15,9 @@ public class CommentServiceJPA implements CommentService {
 
     @Override
     public void addComment(Comment comment) throws CommentException {
-        entityManager.persist(comment);
+        if (comment.getComment().length() > 0) {
+            entityManager.persist(comment);
+        }
     }
 
     @Override

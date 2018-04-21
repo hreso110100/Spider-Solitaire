@@ -21,7 +21,9 @@ public class CommentServiceRest {
     @POST
     @Consumes("application/json")
     public Response addComment(Comment comment) throws CommentException {
-        commentService.addComment(comment);
+        if (comment.getComment() != null) {
+            commentService.addComment(comment);
+        }
         return Response.ok().build();
     }
 
