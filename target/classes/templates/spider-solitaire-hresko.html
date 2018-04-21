@@ -46,7 +46,10 @@
 <body>
 
 <nav class="navbar fixed-top">
-    <a id="back-arrow" class="nav-link fas fa-angle-left fa-2x" onclick="logOut()"></a>
+    <div>
+        <a id="back-arrow" class="nav-link fas fa-angle-left fa-2x" onclick="logOut()"></a>
+        <p id="user"></p>
+    </div>
 
     <div>
         <button id="stepBack" class="btn btn-outline-success" type="button"
@@ -56,8 +59,8 @@
         <button class="btn btn-outline-success" type="button" onclick="window.location.href='?command=restart'">
             <i class="fas fa-rocket"></i>New Game
         </button>
-        <button id="end-game" class="btn btn-outline-warning" type="button"
-                onclick="window.location.href='?command=exit'">
+        <button id="end-game" class="btn btn-outline-warning" data-toggle="modal" data-target="#modalServices"
+                type="button">
             <i class="fas fa-times"></i>End Game
         </button>
         <button id="help" class="btn btn-outline-success" data-toggle="modal" data-target="#modalLong" type="button">
@@ -178,6 +181,34 @@
             </div>
             <div class="modal-footer">
                 <button id="help-button" type="button" class="btn" data-dismiss="modal">Got it !</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalServices" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">How do you like this game ?</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label">Type your opinion here</label>
+                        <textarea name="comment" th:value="*{comment}" class="form-control" id="message-text"
+                                  th:required="required"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button id="save-button" type="submit" class="btn btn-primary"
+                        onclick="window.location.href='?command=exit'">Save my data
+                </button>
             </div>
         </div>
     </div>

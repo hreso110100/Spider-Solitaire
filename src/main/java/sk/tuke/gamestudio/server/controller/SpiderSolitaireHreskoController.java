@@ -2,8 +2,12 @@ package sk.tuke.gamestudio.server.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.context.WebApplicationContext;
@@ -63,5 +67,13 @@ public class SpiderSolitaireHreskoController {
     @RequestMapping("spider-solitaire-hresko-registration")
     public String spiderSolitaireRegistration() {
         return "spider-solitaire-hresko-registration";
+    }
+
+    @PostMapping(value = "spider-solitaire-hresko")
+    public ResponseEntity createCustomer(@RequestBody Score score) {
+
+        scoreService.addScore(score);
+
+        return new ResponseEntity(score, HttpStatus.OK);
     }
 }

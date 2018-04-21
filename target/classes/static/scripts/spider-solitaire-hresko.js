@@ -18,6 +18,16 @@ function replace(clicked_id) {
     }
 }
 
+firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+        if (user.displayName == null) {
+            document.getElementById("user").innerHTML = "Logged as " + user.email;
+        } else {
+            document.getElementById("user").innerHTML = "Logged as " + user.displayName;
+        }
+    }
+});
+
 $(document).ready(function () {
 
     window.setTimeout(function () {

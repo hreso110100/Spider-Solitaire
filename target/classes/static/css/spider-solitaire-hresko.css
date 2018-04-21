@@ -22,6 +22,25 @@ body {
 }
 
 #help-button {
+     color: white;
+     background-color: #27ae60;
+     margin-top: 5px;
+     margin-bottom: 5px;
+     font-family: 'Montserrat', sans-serif;
+     border-color: #27ae60;
+     width: 140px;
+     border-radius: 15px;
+ }
+
+#help-button:hover, #help-button:active {
+    background-color: #8e44ad;
+    border-color: #8e44ad;
+    border-radius: 15px;
+    color: white;
+}
+
+
+#save-button {
     color: white;
     background-color: #27ae60;
     margin-top: 5px;
@@ -32,7 +51,7 @@ body {
     border-radius: 15px;
 }
 
-#help-button:hover, #help-button:active {
+#save-button:hover, #save-button:active {
     background-color: #8e44ad;
     border-color: #8e44ad;
     border-radius: 15px;
@@ -79,6 +98,7 @@ i {
 
 .modal {
     padding-top: 50px;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .btn:hover, .btn:active {
@@ -86,6 +106,13 @@ i {
     border-color: #27ae60;
     color: white;
     border-radius: 15px;
+}
+
+#user {
+    color: white;
+    display: inline-block;
+    font-size: 17px;
+    font-family: 'Montserrat', sans-serif;
 }
 
 #back-arrow {
