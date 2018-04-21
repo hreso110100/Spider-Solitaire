@@ -192,7 +192,8 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">How do you like this game ?</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <button type="button" class="close"
+                        data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
@@ -206,8 +207,11 @@
                 </form>
             </div>
             <div class="modal-footer">
+                <button id="play-again-button" type="submit" class="btn btn-primary"
+                        onclick="window.location.href='?command=restart'">Play again
+                </button>
                 <button id="save-button" type="submit" class="btn btn-primary"
-                        onclick="window.location.href='?command=exit'">Save my data
+                        onclick="saveComment(); saveData();">Save my data
                 </button>
             </div>
         </div>

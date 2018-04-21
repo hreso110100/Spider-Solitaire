@@ -22,15 +22,15 @@ body {
 }
 
 #help-button {
-     color: white;
-     background-color: #27ae60;
-     margin-top: 5px;
-     margin-bottom: 5px;
-     font-family: 'Montserrat', sans-serif;
-     border-color: #27ae60;
-     width: 140px;
-     border-radius: 15px;
- }
+    color: white;
+    background-color: #27ae60;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-family: 'Montserrat', sans-serif;
+    border-color: #27ae60;
+    width: 140px;
+    border-radius: 15px;
+}
 
 #help-button:hover, #help-button:active {
     background-color: #8e44ad;
@@ -38,7 +38,6 @@ body {
     border-radius: 15px;
     color: white;
 }
-
 
 #save-button {
     color: white;
@@ -51,7 +50,25 @@ body {
     border-radius: 15px;
 }
 
-#save-button:hover, #save-button:active {
+#save-button:hover, #save-button:active, #save-button:disabled, #save-button:after {
+    background-color: #8e44ad;
+    border-color: #8e44ad;
+    border-radius: 15px;
+    color: white;
+}
+
+#play-again-button {
+    color: white;
+    background-color: #27ae60;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-family: 'Montserrat', sans-serif;
+    border-color: #27ae60;
+    width: 140px;
+    border-radius: 15px;
+}
+
+#play-again-button:hover, #play-again-button:active, #play-again-button:after, #play-again-button:disabled {
     background-color: #8e44ad;
     border-color: #8e44ad;
     border-radius: 15px;
@@ -72,7 +89,7 @@ i {
     margin-left: 10px;
 }
 
-#end-game:hover, #end-game:active {
+#end-game:hover, #end-game:active, #end-game:disabled #end-game:focus {
     background-color: #e74c3c;
     border-color: #e74c3c;
     border-radius: 15px;
@@ -89,7 +106,7 @@ i {
     margin-left: 10px;
 }
 
-#help:hover, #help:active {
+#help:hover, #help:active, #help:disabled {
     background-color: #3498db;
     border-color: #3498db;
     border-radius: 15px;

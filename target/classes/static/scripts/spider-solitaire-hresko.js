@@ -18,7 +18,7 @@ function replace(clicked_id) {
     }
 }
 
-firebase.auth().onAuthStateChanged(function(user) {
+firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
         if (user.displayName == null) {
             document.getElementById("user").innerHTML = "Logged as " + user.email;
@@ -37,3 +37,33 @@ $(document).ready(function () {
     }, 2000);
 
 });
+
+function saveData() {
+
+    var playerName = document.getElementById("user").innerHTML.substr(10, 500);
+
+    $.ajax({
+        url: "http://localhost:8080/spider-solitaire-hresko",
+        type: "POST",
+        data: "{" + "\"player\": " + "\"" + playerName + "\"" + "}",
+        contentType: "application/json"
+    });
+
+    document.getElementById("save-button").innerHTML = "Saved !";
+    setTimeout(function () {
+        document.getElementById("save-button").disabled = true;
+    }, 1000);
+
+}
+
+function saveComment() {
+    var playerName = document.getElementById("user").innerHTML.substr(10, 500);
+    var comment = document.getElementById("message-text").value;
+
+    $.ajax({
+        url: "http://localhost:8080/spider-solitaire-hresko-comment",
+        type: "POST",
+        data: "{" + "\"player\": " + "\"" + playerName + "\"" + ",\"comment\":" + "\"" + comment + "\"" + "}",
+        contentType: "application/json"
+    });
+}

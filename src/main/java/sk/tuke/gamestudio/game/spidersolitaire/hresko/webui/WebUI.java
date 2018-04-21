@@ -46,7 +46,6 @@ public class WebUI {
                     break;
                 }
                 case "exit": {
-                    scoreService.addScore(new Score("david", getScore(), new Date()));
                     deck = new Deck();
                     break;
                 }

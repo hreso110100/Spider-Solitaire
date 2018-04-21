@@ -6,12 +6,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.context.WebApplicationContext;
 import sk.tuke.gamestudio.game.spidersolitaire.hresko.webui.WebUI;
+import sk.tuke.gamestudio.server.entity.Comment;
 import sk.tuke.gamestudio.server.entity.Score;
 import sk.tuke.gamestudio.server.service.CommentService;
 import sk.tuke.gamestudio.server.service.RatingService;
@@ -70,10 +68,22 @@ public class SpiderSolitaireHreskoController {
     }
 
     @PostMapping(value = "spider-solitaire-hresko")
-    public ResponseEntity createCustomer(@RequestBody Score score) {
+    public ResponseEntity createScore(@RequestBody Score score) {
+
+        score = new Score(score.getPlayer(), webUI.getScore(), new Date());
 
         scoreService.addScore(score);
 
         return new ResponseEntity(score, HttpStatus.OK);
+    }
+
+    @PostMapping(value = "spider-solitaire-hresko-comment")
+    public ResponseEntity createComment(@RequestBody Comment comment) {
+
+        comment = new Comment(comment.getPlayer(), comment.getComment(), new Date());
+
+        commentService.addComment(comment);
+
+        return new ResponseEntity(comment, HttpStatus.OK);
     }
 }
