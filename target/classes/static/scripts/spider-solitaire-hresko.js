@@ -38,12 +38,22 @@ $(document).ready(function () {
 
 });
 
+$(function () {
+
+    $("#rateYo").rateYo({
+        starWidth: "40px",
+        ratedFill: "#f1c40f",
+        fullStar: true
+    });
+
+});
+
 function saveData() {
 
     var playerName = document.getElementById("user").innerHTML.substr(10, 500);
 
     $.ajax({
-        url: "http://localhost:8080/spider-solitaire-hresko",
+        url: "http://localhost:8080/spider-solitaire-hresko-score",
         type: "POST",
         data: "{" + "\"player\": " + "\"" + playerName + "\"" + "}",
         contentType: "application/json"
@@ -64,6 +74,18 @@ function saveComment() {
         url: "http://localhost:8080/spider-solitaire-hresko-comment",
         type: "POST",
         data: "{" + "\"player\": " + "\"" + playerName + "\"" + ",\"comment\":" + "\"" + comment + "\"" + "}",
+        contentType: "application/json"
+    });
+}
+
+function saveRating() {
+    var playerName = document.getElementById("user").innerHTML.substr(10, 500);
+    var rating = $("#rateYo").rateYo("rating");
+
+    $.ajax({
+        url: "http://localhost:8080/spider-solitaire-hresko-rating",
+        type: "POST",
+        data: "{" + "\"player\": " + "\"" + playerName + "\"" + ",\"rating\":" + "\"" + rating + "\"" + "}",
         contentType: "application/json"
     });
 }

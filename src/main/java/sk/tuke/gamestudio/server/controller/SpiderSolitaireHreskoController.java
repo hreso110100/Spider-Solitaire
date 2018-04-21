@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.context.WebApplicationContext;
 import sk.tuke.gamestudio.game.spidersolitaire.hresko.webui.WebUI;
 import sk.tuke.gamestudio.server.entity.Comment;
+import sk.tuke.gamestudio.server.entity.Rating;
 import sk.tuke.gamestudio.server.entity.Score;
 import sk.tuke.gamestudio.server.service.CommentService;
 import sk.tuke.gamestudio.server.service.RatingService;
@@ -67,7 +68,7 @@ public class SpiderSolitaireHreskoController {
         return "spider-solitaire-hresko-registration";
     }
 
-    @PostMapping(value = "spider-solitaire-hresko")
+    @PostMapping(value = "spider-solitaire-hresko-score")
     public ResponseEntity createScore(@RequestBody Score score) {
 
         score = new Score(score.getPlayer(), webUI.getScore(), new Date());
@@ -85,5 +86,16 @@ public class SpiderSolitaireHreskoController {
         commentService.addComment(comment);
 
         return new ResponseEntity(comment, HttpStatus.OK);
+    }
+
+
+    @PostMapping(value = "spider-solitaire-hresko-rating")
+    public ResponseEntity createComment(@RequestBody Rating rating) {
+
+        rating = new Rating(rating.getPlayer(), rating.getRating(), new Date());
+
+        ratingService.setRating(rating);
+
+        return new ResponseEntity(rating, HttpStatus.OK);
     }
 }
