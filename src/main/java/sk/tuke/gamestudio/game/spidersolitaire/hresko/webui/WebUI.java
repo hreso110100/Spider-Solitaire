@@ -89,31 +89,37 @@ public class WebUI {
     }
 
     public String renderStock() {
-        StringBuilder stockBuilder = new StringBuilder();
+        if (deck.getGameState() == 0) {
+            StringBuilder stockBuilder = new StringBuilder();
 
-        if (Deck.removeItemFromArrayIndex <= 49) {
-            stockBuilder.append("<a href='" + "?command=take' class = stock-a>");
-            stockBuilder.append("<img src='" + "/images/spider-solitaire/hresko/back.png" + "' width = 110px height=150px>");
-            stockBuilder.append("</a>");
-        } else {
-            stockBuilder.append("<img class = stock-a src='" + "/images/spider-solitaire/hresko/empty_stock.png" + "' width = 110px height=150px>");
+            if (Deck.removeItemFromArrayIndex <= 49) {
+                stockBuilder.append("<a href='" + "?command=take' class = stock-a>");
+                stockBuilder.append("<img src='" + "/images/spider-solitaire/hresko/back.png" + "' width = 110px height=150px>");
+                stockBuilder.append("</a>");
+            } else {
+                stockBuilder.append("<img class = stock-a src='" + "/images/spider-solitaire/hresko/empty_stock.png" + "' width = 110px height=150px>");
+            }
+            return stockBuilder.toString();
         }
-        return stockBuilder.toString();
+        return null;
     }
 
     public String renderFoundations() {
-        StringBuilder foundationBuilder = new StringBuilder();
+        if (deck.getGameState() == 0) {
+            StringBuilder foundationBuilder = new StringBuilder();
 
-        foundationBuilder.append("<img class = foundation src='" + "/images/spider-solitaire/hresko/empty.png" + "' width = 130px height=150px>");
+            foundationBuilder.append("<img class = foundation src='" + "/images/spider-solitaire/hresko/empty.png" + "' width = 130px height=150px>");
 
-        for (int i = 0; i < deck.getFoundations().getFoundationList().length; i++) {
-            if (!deck.getFoundations().getFoundationList()[i].isEmpty()) {
-                foundationBuilder.append("<img class = foundation src='" + "/images/spider-solitaire/hresko/KS.png" + "' width = 130px height=150px>");
-            } else {
-                foundationBuilder.append("<img class = foundation src='" + "/images/spider-solitaire/hresko/foundation_spot.png" + "' width = 130px height=150px>");
+            for (int i = 0; i < deck.getFoundations().getFoundationList().length; i++) {
+                if (!deck.getFoundations().getFoundationList()[i].isEmpty()) {
+                    foundationBuilder.append("<img class = foundation src='" + "/images/spider-solitaire/hresko/KS.png" + "' width = 130px height=150px>");
+                } else {
+                    foundationBuilder.append("<img class = foundation src='" + "/images/spider-solitaire/hresko/foundation_spot.png" + "' width = 130px height=150px>");
+                }
             }
+            return foundationBuilder.toString();
         }
-        return foundationBuilder.toString();
+        return null;
     }
 
     // TODO gamestate ak vyhraty tak volat servisy, vid CONSOLE UI metodu checkifgamewon()
@@ -198,6 +204,10 @@ public class WebUI {
                 }
                 deckBuilder.append("</div>");
             }
+        } else if (deck.getGameState() == 2) {
+            deckBuilder.append("<p id=text-winner>You made it !</p>");
+            deckBuilder.append("<p id=final-score> Your score : ").append(getScore()).append("</p>");
+            deckBuilder.append("<canvas id=confetti></canvas>");
         }
         return deckBuilder.toString();
     }

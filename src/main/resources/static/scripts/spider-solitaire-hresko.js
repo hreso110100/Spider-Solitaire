@@ -48,6 +48,16 @@ $(function () {
 
 });
 
+function confetti() {
+
+    var confettiSettings = {target: 'confetti', max: '700', clock: '15'};
+    var confetti = new window.ConfettiGenerator(confettiSettings);
+    document.getElementById("bugged-row").style.height = '800px';
+    document.getElementById("main-panel").style.display = 'none';
+    confetti.render();
+}
+
+
 function saveData() {
 
     var playerName = document.getElementById("user").innerHTML.substr(10, 500);
