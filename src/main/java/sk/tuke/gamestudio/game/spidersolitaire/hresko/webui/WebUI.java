@@ -3,13 +3,6 @@ package sk.tuke.gamestudio.game.spidersolitaire.hresko.webui;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import sk.tuke.gamestudio.game.spidersolitaire.hresko.deck.Deck;
-import sk.tuke.gamestudio.server.entity.Score;
-import sk.tuke.gamestudio.server.service.CommentService;
-import sk.tuke.gamestudio.server.service.RatingService;
-import sk.tuke.gamestudio.server.service.ScoreService;
-import sk.tuke.gamestudio.server.service.ScoreServiceJPA;
-
-import java.util.Date;
 
 public class WebUI {
 
@@ -19,15 +12,6 @@ public class WebUI {
     public WebUI() {
         deck = new Deck();
     }
-
-    @Autowired
-    private ScoreService scoreService;
-
-    @Autowired
-    private CommentService commentService;
-
-    @Autowired
-    private RatingService ratingService;
 
     public int getScore() {
         return deck.getScore();
@@ -86,6 +70,27 @@ public class WebUI {
         }
 
         return null;
+    }
+
+    public String renderFinalText() {
+
+        StringBuilder finalBuilderText = new StringBuilder();
+
+        if (deck.getGameState() == 2) {
+            finalBuilderText.append("<p id=text-winner>You made it !</p>");
+            finalBuilderText.append("<canvas id=confetti></canvas>");
+        }
+        return finalBuilderText.toString();
+    }
+
+    public String renderFinalScore() {
+
+        StringBuilder finalBuilderText = new StringBuilder();
+
+        if (deck.getGameState() == 2) {
+            finalBuilderText.append("<p id=final-score>Final score : ").append(getScore()).append("</p>");
+        }
+        return finalBuilderText.toString();
     }
 
     public String renderStock() {
@@ -204,10 +209,6 @@ public class WebUI {
                 }
                 deckBuilder.append("</div>");
             }
-        } else if (deck.getGameState() == 2) {
-            deckBuilder.append("<p id=text-winner>You made it !</p>");
-            deckBuilder.append("<p id=final-score> Your score : ").append(getScore()).append("</p>");
-            deckBuilder.append("<canvas id=confetti></canvas>");
         }
         return deckBuilder.toString();
     }

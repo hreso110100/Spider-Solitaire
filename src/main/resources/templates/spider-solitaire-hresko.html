@@ -97,6 +97,17 @@
     </div>
 </div>
 
+<div id="final-panel">
+    <div class="container-fluid">
+        <div class="row" style="justify-content: center">
+            <p id="final-text" th:utext="${renderFinalText}"></p>
+        </div>
+        <div class="row" style="justify-content: center">
+            <p id="final-score" th:utext="${renderFinalScore}"></p>
+        </div>
+    </div>
+</div>
+
 <div class="modal fade" id="modalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
      aria-hidden="true">
     <div class="modal-dialog" role="document">

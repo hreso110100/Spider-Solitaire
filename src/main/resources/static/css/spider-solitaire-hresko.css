@@ -87,29 +87,21 @@ i {
 }
 
 #text-winner {
-    font-size: 150px;
+    font-size: 140px;
     text-align: center;
     color: white;
     font-family: 'Montserrat', sans-serif;
-    padding-top: 5%;
-    padding-left: 23%;
-}
-
-#text-winner {
-    font-size: 120px;
-    text-align: center;
-    color: white;
-    font-family: 'Montserrat', sans-serif;
-    padding-left: 23%;
 }
 
 #final-score {
-    font-size: 80px;
+    font-size: 60px;
     text-align: center;
     color: #8e44ad;
     font-family: 'Montserrat', sans-serif;
-    padding-top: 10%;
-    padding-left: 23%;
+}
+
+#final-panel {
+    justify-content: center;
 }
 
 #end-game {
