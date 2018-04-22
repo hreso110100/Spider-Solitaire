@@ -50,7 +50,7 @@ $(function () {
 
 function confetti() {
 
-    var confettiSettings = {target: 'confetti', max: '700', clock: '15'};
+    var confettiSettings = {target: 'confetti', max: '700', clock: '15', size: '2'};
     var confetti = new window.ConfettiGenerator(confettiSettings);
     document.getElementById("bugged-row").style.height = '800px';
     document.getElementById("main-panel").style.display = 'none';
