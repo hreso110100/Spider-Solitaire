@@ -28,7 +28,7 @@ public class Deck {
     private int inputDestinationRow;
     private int foundationIndex;
     private int foundationsFilled;
-    private int gameState = 2;
+    private int gameState = 0;
 
     @Autowired
     private ScoreService scoreService;
